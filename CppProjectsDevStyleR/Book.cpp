@@ -38,7 +38,7 @@ void Book::setPrice(float _price)
 		if (price < 0)
 			cout << "There is no book with price BGN " << price << " in the catalog.";
 
-	this->price = price;
+	this->price = _price;
 }
 
 string Book::getAuthor()

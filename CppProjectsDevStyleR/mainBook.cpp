@@ -10,13 +10,15 @@ int main()
 {
 	vector<Book> books;
 	BookOperations set1;
+	int vectorItems = 2;
 
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < vectorItems; i++)
 	{
 		Book newBook = set1.setVectorInfo();
 		books.push_back(newBook);
 	}
 
+	cout << "BOOK CATALOG:\n" << endl;
 	for (int i = 0; i < books.size(); i++)
 	{
 		books.at(i).displayInfo();
