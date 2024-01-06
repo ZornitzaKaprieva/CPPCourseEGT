@@ -1,6 +1,6 @@
-#include "BookSet.h"
+#include "BookOperations.h"
 
-Book BookSet::inputData()
+Book BookOperations::setInfo()
 {
     string author;
     string title;
@@ -9,8 +9,10 @@ Book BookSet::inputData()
 
     cout << "Enter author: ";
     getline(cin, author);
+    //cin >> author;
     cout << "Enter title: ";
     getline(cin, title);
+    //cin >> title;
     cout << "Enter year: ";
     cin >> year;
     cout << "Enter price: ";
@@ -19,4 +21,5 @@ Book BookSet::inputData()
     Book newBook(author, title, year, price);
 
     return newBook;
-}
+} 
+

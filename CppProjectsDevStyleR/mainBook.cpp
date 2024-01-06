@@ -1,5 +1,5 @@
 ﻿#include "Book.h"
-#include "BookSet.h"
+#include "BookOperations.h"
 #include<vector>
 
 /*Да се направи клас Книга, който съдържа информация за автор, име, година на издаване и цена.
@@ -9,21 +9,27 @@
 
 int main()
 {
-
 	vector<Book> books;
-	BookSet set1;
+	BookOperations set1;
 
 	for (int i = 0; i < 3; i++)
 	{
-		Book newBook = set1.inputData();
+		Book newBook = set1.setInfo();
 		books.push_back(newBook);
 	}
 
 	for (int i = 0; i < books.size(); i++)
 	{
 		books.at(i).displayInfo();
-		cout << endl;
 	}
+
+	/*for (int i = 0; i < books.size(); i++)
+	{
+		books.at(i).getPrice();
+		cout << books.at(i).getPrice() << endl;
+
+	}*/
+
 	return 0;
 
 }

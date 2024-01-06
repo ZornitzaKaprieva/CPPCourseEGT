@@ -129,12 +129,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Book.cpp" />
-    <ClCompile Include="BookSet.cpp" />
+    <ClCompile Include="BookOperations.cpp" />
     <ClCompile Include="mainBook.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book.h" />
-    <ClInclude Include="BookSet.h" />
+    <ClInclude Include="BookOperations.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

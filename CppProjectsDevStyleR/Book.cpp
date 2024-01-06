@@ -14,8 +14,8 @@ void Book::displayInfo()
 {
 	cout << "Author: " << getAuthor() << "\n" << "Title: " << getTitle() << "\n"
 		<< "Year: " << getYear() << "\n" << "Price: BGN " << getPrice() << endl;
+	cout<< endl;
 }
-
 
 void Book::setAuthor(string _author)
 {

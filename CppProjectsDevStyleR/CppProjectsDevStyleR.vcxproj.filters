@@ -21,7 +21,7 @@
     <ClCompile Include="Book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BookSet.cpp">
+    <ClCompile Include="BookOperations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="Book.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BookSet.h">
+    <ClInclude Include="BookOperations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
