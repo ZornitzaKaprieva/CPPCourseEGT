@@ -9,18 +9,18 @@ Book BookOperations::setVectorInfo()
 	float price;
 
 	cout << "Enter author: ";
-	getline(cin, author);
+	getline(cin >> ws, author); //getline(cin, author);
 	cout << "Enter title: ";
-	getline(cin, title);
+	getline(cin >> ws, title);
 	cout << "Enter year: ";
 	cin >> year;
-	cin.ignore(1000, '\n');
+	//cin.ignore();
 	cout << "Enter price: ";
 	cin >> price;
-	cin.ignore(1000, '\n');
+	//cin.ignore();
 	cout << endl;
 
-	Book newBook(author, title, year, price); //doesn`t work with book.getYear()
+	Book newBook(author, title, year, price); 
 
 	return newBook;
 }
