@@ -9,6 +9,7 @@ class BookOperations
 {
 public:
 	Book setVectorInfo();
+
 };
 
 #endif // CPPCLASSES_BOOKOPERATIONS_H

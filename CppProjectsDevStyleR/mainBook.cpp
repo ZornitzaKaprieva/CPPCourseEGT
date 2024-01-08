@@ -57,7 +57,7 @@ int main()
 
 	cout << "SEARCH BY AUTHOR:\n" << endl;
 
-	cout << "Enter the author you are looking for: ";
+	cout << "Enter the author or title you are looking for: ";
 	string userSearch;
 	getline(cin >> ws, userSearch);
 	cout << endl;
