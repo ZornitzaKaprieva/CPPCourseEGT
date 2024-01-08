@@ -11,17 +11,17 @@ using namespace std;
 class Book
 {
 public:
-	Book() {}
+	Book();
 
 	Book(string, string, int, float); //describing constructor prototypes: the name and type of the return value
 	void setAuthor(string);
-	string getAuthor();
+	string getAuthor() const; // const = no values will be changed
 	void setTitle(string);
-	string getTitle();
+	string getTitle() const;
 	void setYear(int);
-	int getYear();
+	int getYear() const;
 	void setPrice(float);
-	float getPrice();
+	float getPrice() const;
 	void displayInfo();
 
 private:

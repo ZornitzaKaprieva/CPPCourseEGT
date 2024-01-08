@@ -35,28 +35,28 @@ void Book::setYear(int _year)
 
 void Book::setPrice(float _price)
 {
-		if (price < 0)
-			cout << "There is no book with price BGN " << price << " in the catalog.";
+	if (price < 0)
+		cout << "There is no book with price BGN " << price << " in the catalog.";
 
 	this->price = _price;
 }
 
-string Book::getAuthor()
+string Book::getAuthor() const
 {
 	return author;
 }
 
-string Book::getTitle()
+string Book::getTitle() const
 {
 	return title;
 }
 
-int Book::getYear()
+int Book::getYear() const
 {
 	return year;
 }
 
-float Book::getPrice()
+float Book::getPrice() const
 {
 	return price;
 }
