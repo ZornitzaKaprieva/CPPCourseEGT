@@ -11,16 +11,19 @@ int main()
 {
 	vector<Book> books;
 	BookOperations set1;
-	int vectorItems = 4;
+	int catalogSize;
 
-	for (int i = 0; i < vectorItems; i++)
+	cout << "Enter how many books should be in the catalog: ";
+	cin >> catalogSize;
+
+	for (int i = 0; i < catalogSize; i++)
 	{
 		Book newBook = set1.setVectorInfo();
 		books.push_back(newBook);
 	}
 
 	cout << "BOOK CATALOG:\n" << endl;
-	for (int i = 0; i < books.size(); i++)
+	for (int i = 0; i < catalogSize; i++)
 	{
 		books.at(i).displayInfo();
 	}
@@ -55,17 +58,22 @@ int main()
 	cout << "SEARCH BY AUTHOR:\n" << endl;
 
 	cout << "Enter the author you are looking for: ";
-	string authorSearch;
-	getline(cin >> ws, authorSearch);
+	string userSearch;
+	getline(cin >> ws, userSearch);
 	cout << endl;
 
+	int coutResults = 0;
 	for (int i = 0; i < books.size(); i++)
 	{
 		string currentAuthor = books.at(i).getAuthor();
-		if (authorSearch == currentAuthor) {
+		string currentTitle = books.at(i).getTitle();
+		if (userSearch == currentAuthor || userSearch == currentTitle) {
 			books.at(i).displayInfo();
-		}
+			coutResults++;
+		}	
 	}
+	if (coutResults == 0)
+		cout << "No results for " << userSearch << endl;
 
 	return 0;
 }
