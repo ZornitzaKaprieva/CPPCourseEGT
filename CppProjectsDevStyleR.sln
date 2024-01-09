@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Book", "CppProjectsDevStyleR\CppProjectsDevStyleR.vcxproj", "{CE16CB4A-5255-475E-81FA-DD391CDFDE34}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task1Book", "Task1Book", "{754AEE1D-3438-4679-891C-C1A71CDA4D37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -24,6 +26,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CE16CB4A-5255-475E-81FA-DD391CDFDE34} = {754AEE1D-3438-4679-891C-C1A71CDA4D37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C4B9906-C165-4F30-853B-01BA4486F3F7}
