@@ -5,7 +5,6 @@ Book::Book(string _author, string _title, int _year, float _price) //:: Scope re
 	this->author = _author;
 	this->title = _title;
 	this->year = _year;
-	setPrice(this->price = _price);
 }
 
 void Book::displayInfo()
