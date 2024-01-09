@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ce16cb4a-5255-475e-81fa-dd391cdfde34}</ProjectGuid>
-    <RootNamespace>CppProjectsDevStyleR</RootNamespace>
+    <ProjectGuid>{b04a1eaa-69d5-4984-9ead-be7af13af100}</ProjectGuid>
+    <RootNamespace>BookCatalog</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>main</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="Book.h" />
+    <ClInclude Include="BookOperations.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Book.cpp" />
+    <ClCompile Include="BookMain.cpp" />
+    <ClCompile Include="BookOperations.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

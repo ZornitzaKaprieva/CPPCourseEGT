@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ce16cb4a-5255-475e-81fa-dd391cdfde34}</ProjectGuid>
-    <RootNamespace>CppProjectsDevStyleR</RootNamespace>
+    <ProjectGuid>{2f5799e0-31e8-4a7c-b830-f297f78cce91}</ProjectGuid>
+    <RootNamespace>School</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>main</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +127,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="Class.h" />
+    <ClInclude Include="Discipline.h" />
+    <ClInclude Include="School.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="StudentList.h" />
+    <ClInclude Include="Teacher.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Class.cpp" />
+    <ClCompile Include="Discipline.cpp" />
+    <ClCompile Include="School.cpp" />
+    <ClCompile Include="SchoolMain.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="StudentList.cpp" />
+    <ClCompile Include="Teacher.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
