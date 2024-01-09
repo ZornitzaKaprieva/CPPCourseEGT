@@ -5,7 +5,7 @@ Book::Book(string _author, string _title, int _year, float _price) //:: Scope re
 	this->author = _author;
 	this->title = _title;
 	this->year = _year;
-	this->price = _price;
+	setPrice(this->price = _price);
 }
 
 void Book::displayInfo()
@@ -27,16 +27,30 @@ void Book::setTitle(string _title)
 
 void Book::setYear(int _year)
 {
-	if (year < 1900 || year > 2024)
+	do
+	{
+		cout << "Year: ";
+		cin >> year;
+
+		if(year < 1900 || year > 2024)
 		cout << "There is no book published in " << year << " in the catalog.\n";
+		
+	} while (year < 1900 || year > 2024);
 
 	this->year = _year;
 }
 
 void Book::setPrice(float _price)
 {
-	if (price < 0)
-		cout << "There is no book with price BGN " << price << " in the catalog.";
+	do
+	{
+		cout << "Price: ";
+		cin >> price;
+
+		if (price < 0)
+			cout << "There is no book with price BGN " << price << " in the catalog.";
+
+	} while (price < 0);
 
 	this->price = _price;
 }
