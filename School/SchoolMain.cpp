@@ -4,7 +4,6 @@
 #include"Teacher.h"
 #include"Discipline.h"
 
-#include<vector>
 using namespace std;
 
 /*We are given a school. In the school there are classes of students. Each class has a set of teachers. Each teacher teaches a set of disciplines.
@@ -15,8 +14,29 @@ Keep the member fields private. Add constructors and accessor methods. Write a t
 int main()
 {
 
+	//ok: Student, Class, Teacher, Dispiline
+	Class c1("IA class");
+	Class c2("IB class");
+	vector<Student> students;
+	vector<Teacher> teachers;
+	cout << c1.getClassID() << endl;
+	c1.fillTeachersAndStudentsInClass(students, teachers);
+	c2.setClassName2();
+	cout << c2.getClassID() << endl;
+	c2.fillStudentsInClass(students); //c2.fillTeachersAndStudentsInClass(students, teachers);
+	c2.fillTeachersInClass(teachers); //c2.fillTeachersAndStudentsInClass(students, teachers);
+	c1.printStudentsAnTeachersList(students, teachers);
+	c2.printStudentsList(students); //c2.printStudentsAnTeachersList(students, teachers);
+	c2.printTeachersList(teachers); //c2.printStudentsAnTeachersList(students, teachers);
 
-	Student s1("Zornitza Kaprieva", 1111);
+
+	//todo: School
+	School sch("138SUZIE");
+	cout << sch.getSchoolName() << endl;
+
+
+	//SOME TESTS:
+	/*Student s1("Zornitza Kaprieva", 1111);
 	Student s2("Maria Ivanova", 1112);
 	vector<Student> firstA;
 	firstA.push_back(s1);
@@ -30,8 +50,11 @@ int main()
 	cout << "........" << endl;
 	Discipline d1("Math", 15, 30);
 	Discipline d2("History", 25, 50);
-	Discipline d3("Literature", 25, 50);
 	//d2.printDisciplineInfo();
+	Discipline d3;
+	d3.setDisciplineInfo();
+	//d3.printDisciplineInfo();
+	cout << "........" << endl;
 	cout << "........" << endl;
 	Teacher t1("Mr.", "Ivan Georgiev", d1);
 	Teacher t2("Mrs.", "Maria Petrova", d2);
@@ -47,23 +70,16 @@ int main()
 	}
 	cout << "........" << endl;
 
-	Class c1("IA class");
-	Class c2("IB class");
-	vector<Student> students;
-
-	cout << c1.getClassID() << endl;
-	c1.fillClass(students);
-	cout << c2.getClassID() << endl;
-	c2.fillClass(students);
-
-	c1.printStudentList(students);
-	c2.printStudentList(students);
-
-	School classes;
-
-
-
-
+	vector<Student> students1;
+	vector<Teacher> teachers1;
+	Student s;
+	s.setStudentInfo();
+	s.printStudentInfo();
+	Class c("First");
+	c.fillClass(students1, teachers1);
+	Teacher t;
+	t.fillTeacherList(teachers1);
+	t.printTeachersList(teachers1);*/
 
 	return 0;
 }

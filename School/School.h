@@ -1,25 +1,24 @@
 #pragma once
 
+#include"Class.h"
+#include "School.h"
 #include"Student.h"
 #include"Class.h"
-
-#include<iostream>
-#include<string>
-#include<vector>
-using namespace std;
+#include"Teacher.h"
+#include"Discipline.h"
 
 class School
 {
 public:
 	School();
-	//School(string);
+	School(string);
 	int setClassesNum();
-	void fillSchoolList(vector<Class>&);
-	Class setClassVInfo();
-	void printClassesList(vector<Class>&);
-	//void setSchoolName(string);
-	//string getSchoolName();
+	void setSchoolName(string);
+	string getSchoolName();
+	void fillClassesInSchool();//todo
+
 private:
-	//string schoolName;
+	string schoolName;
+
 };
 

@@ -19,6 +19,10 @@ public:
 	void setTeacherTitle(string);
 	string getTeacherTitle();
 
+	int teacherListSize();
+	void fillTeacherList(vector<Teacher>&);
+	Teacher setTeacherVInfo();
+	void printTeachersList(vector<Teacher>&);
 
 private:
 	string teacherName;

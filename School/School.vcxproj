@@ -131,7 +131,6 @@
     <ClInclude Include="Discipline.h" />
     <ClInclude Include="School.h" />
     <ClInclude Include="Student.h" />
-    <ClInclude Include="StudentList.h" />
     <ClInclude Include="Teacher.h" />
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +139,6 @@
     <ClCompile Include="School.cpp" />
     <ClCompile Include="SchoolMain.cpp" />
     <ClCompile Include="Student.cpp" />
-    <ClCompile Include="StudentList.cpp" />
     <ClCompile Include="Teacher.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

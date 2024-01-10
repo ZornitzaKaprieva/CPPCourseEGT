@@ -11,9 +11,28 @@ Discipline::Discipline(string _disciplineName, int _lecturesCount, int _exercise
 	this->exercisesCount = _exercisesCount;
 }
 
+Discipline Discipline::setDisciplineInfo() //todo vector  displines
+{
+	string disciplineName;
+	int lectures;
+	int exercises;
+	cout << "Discipline: ";
+	getline(cin >> ws, disciplineName);
+	cout << "Lectures (hours): ";
+	cin >> lectures;
+	cout << "Exercises (hours): ";
+	cin >> exercises;
+	this->disciplineName = disciplineName;
+	this->lecturesCount = lectures;
+	this->exercisesCount = exercises;
+
+	Discipline newDiscipline(disciplineName, lectures, exercises);
+	return newDiscipline;
+}
+
 void Discipline::printDisciplineInfo()
 {
-	cout << "Discipline: " << getDisciplineName() << "; Lectures: " << getLecturesCount() << "; Exercises: " << getExercisesCount() << endl;
+	cout << " (" << getDisciplineName() << "; Lectures: " << getLecturesCount() << "; Exercises: " << getExercisesCount() << ") " << endl;
 }
 
 void Discipline::setDisciplineName(string _disciplineName)

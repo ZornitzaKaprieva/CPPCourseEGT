@@ -9,6 +9,7 @@ class Discipline
 public:
 	Discipline();
 	Discipline(string, int, int);
+	Discipline setDisciplineInfo();
 	void printDisciplineInfo();
 	void setDisciplineName(string);
 	string getDisciplineName() const;

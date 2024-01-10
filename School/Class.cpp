@@ -1,5 +1,14 @@
 #include "Class.h"
 
+Class::Class()
+{
+}
+
+Class::Class(string id)
+{
+	this->classID = id;
+}
+
 int Class::setClassSize()
 {
 	int size;
@@ -7,43 +16,114 @@ int Class::setClassSize()
 	cin >> size;
 	return size;
 }
-void Class::fillClass(vector<Student>& students)
+
+string Class::setClassName2() 
 {
-	StudentList s;
-	int size = setClassSize();
-	for (int i = 0; i < size; i++)
+	string id;
+	cout << "Class ID: ";
+	cin >> id;
+	this->classID = id;
+	return id;
+}
+
+int Class::setTeachersTeam()
+{
+	int size;
+	cout << "Size of the teacher team: ";
+	cin >> size;
+	return size;
+}
+
+void Class::fillTeachersAndStudentsInClass(vector<Student>& students, vector<Teacher>& teachers)
+{
+	int sizeClass = setClassSize();
+	for (int i = 0; i < sizeClass; i++)
 	{
-		Student newStudent = s.setVectorInfo();
+		Student newStudent;
+		newStudent.setStudentInfo();
 		students.push_back(newStudent);
+
+
+	}
+	int sizeTeacherTeam = setTeachersTeam();
+	for (int i = 0; i < sizeTeacherTeam; i++)
+	{
+
+		Teacher newTeacher;
+		newTeacher.setTeacherVInfo();
+		teachers.push_back(newTeacher);
+
 	}
 	cout << endl;
 }
-Student Class::setStudentVInfo()
+
+void Class::fillStudentsInClass(vector<Student>& students)
 {
-	string studentName;
-	int studentID;
-	cout << "Student Name: ";
-	getline(cin >> ws, studentName);
-	cout << "Student ID: ";
-	cin >> studentID;
-
-	Student newStudent(studentName, studentID);
-
-	return newStudent;
-
+	int sizeClass = setClassSize();
+	for (int i = 0; i < sizeClass; i++)
+	{
+		Student newStudent;
+		newStudent.setStudentInfo();
+		students.push_back(newStudent);
+	}
+	
+	cout << endl;
 }
-void Class::printStudentList(vector<Student>& students)
+void Class::fillTeachersInClass(vector<Teacher>& teachers)
 {
-	cout <<this->classID << " Student List: " << endl;
+
+	int sizeTeacherTeam = setTeachersTeam();
+	for (int i = 0; i < sizeTeacherTeam; i++)
+	{
+
+		Teacher newTeacher;
+		newTeacher.setTeacherVInfo();
+		teachers.push_back(newTeacher);
+
+	}
+	cout << endl;
+}
+
+void Class::printStudentsAnTeachersList(vector<Student>& students, vector<Teacher>& teachers)
+{
+	cout << this->classID << endl;
+	cout << endl << this->classID << " Student List: " << endl;
+	for (int i = 0; i < students.size(); i++)
+	{
+		students.at(i).printStudentInfo();
+	}
+	cout << endl;
+	cout << this->classID << " Teachers List: " << endl;
+	for (int i = 0; i < teachers.size(); i++)
+	{
+		teachers.at(i).printTeacherInfo();
+	}
+
+	cout << "............." << endl;
+	cout << endl;
+}
+
+void Class::printStudentsList(vector<Student>& students)
+{
+	cout << this->classID << endl;
+	cout << endl << this->classID << " Student List: " << endl;
 	for (int i = 0; i < students.size(); i++)
 	{
 		students.at(i).printStudentInfo();
 	}
 	cout << endl;
 }
-Class::Class(string id)
+
+void Class::printTeachersList(vector<Teacher>& teachers)
 {
-	this->classID = id;
+	cout << this->classID << " Teachers List: " << endl;
+	for (int i = 0; i < teachers.size(); i++)
+	{
+		teachers.at(i).printTeacherInfo();
+	}
+
+	cout << "............." << endl;
+	cout << endl;
 }
 
 void Class::setClassID(string id)
@@ -51,7 +131,7 @@ void Class::setClassID(string id)
 	this->classID = id;
 }
 
-string Class::getClassID() 
+string Class::getClassID()
 {
 	return this->classID;
 }
