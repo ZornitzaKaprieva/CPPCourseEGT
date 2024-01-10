@@ -11,6 +11,7 @@ using namespace std;
 class Book
 {
 public:
+	Book();
 	Book(string, string, int, float); //describing constructor prototypes: the name and type of the return value
 	void setAuthor(string);
 	string getAuthor() const; // const = no values will be changed
@@ -20,6 +21,7 @@ public:
 	int getYear() const;
 	void setPrice(float);
 	float getPrice() const;
+	void setInfo();
 	void displayInfo();
 private:
 	string author;

@@ -1,11 +1,31 @@
 #include "Book.h"
 
+
+Book::Book()
+{
+	this->author;
+	this->title;
+	this->year;
+	this->price;
+}
+
 Book::Book(string _author, string _title, int _year, float _price) //:: Scope resolution operator = Book::Book() {}: this is how we access Book.h
 {
 	this->author = _author;
 	this->title = _title;
 	this->year = _year;
 	this->price = _price;
+	//setPrice(price);
+	//setInfo();
+}
+
+//new:
+void Book::setInfo()
+{
+	setAuthor(author);
+	setTitle(title);
+	setYear(year);
+	setPrice(price);
 }
 
 void Book::displayInfo()
@@ -17,11 +37,17 @@ void Book::displayInfo()
 
 void Book::setAuthor(string _author)
 {
+	cout << "Author: ";
+	getline(cin >> ws, _author);;
+
 	this->author = _author;
 }
 
 void Book::setTitle(string _title)
 {
+	cout << "Title: ";
+	getline(cin >> ws, _title);
+
 	this->title = _title;
 }
 
@@ -30,12 +56,12 @@ void Book::setYear(int _year)
 	do
 	{
 		cout << "Year: ";
-		cin >> year;
+		cin >> _year;
 
-		if (year < 1900 || year > 2024)
-			cout << "There is no book published in " << year << " in the catalog.\n";
+		if (_year < 1900 || _year > 2024)
+			cout << "There is no book published in " << _year << " in the catalog.\n";
 
-	} while (year < 1900 || year > 2024);
+	} while (_year < 1900 || _year > 2024);
 
 	this->year = _year;
 }
@@ -45,12 +71,12 @@ void Book::setPrice(float _price)
 	do
 	{
 		cout << "Price: ";
-		cin >> price;
+		cin >> _price;
 
-		if (price < 0)
-			cout << "There is no book with price BGN " << price << " in the catalog.";
+		if (_price < 0)
+			cout << "There is no book with price BGN " << _price << " in the catalog." << endl;;
 
-	} while (price < 0);
+	} while (_price < 0);
 
 	this->price = _price;
 }

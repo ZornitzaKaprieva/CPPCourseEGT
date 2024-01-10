@@ -20,6 +20,40 @@ void BookOperations::fillCatalog(vector<Book>& books)
 	}
 }
 
+Book BookOperations::setVectorInfo()
+{
+	Book b;
+	string author;
+	string title;
+	int year;
+	float price;
+
+cout << "Enter author: ";
+	getline(cin >> ws, author); //getline(cin, author);
+	cout << "Enter title: ";
+	getline(cin >> ws, title);
+	cout << "Enter year: ";
+	cin >> year;
+	cin.ignore();
+	//setPrice(price);
+	cout << "Enter price: ";
+	cin >> price;
+	cin.ignore();
+	cout << endl;
+
+	//Book::setInfo(); //instead enter...
+	//b.setInfo();
+	/*b.setAuthor(author);
+	b.setTitle(title);
+	b.setYear(year);
+	b.setPrice(price);*/
+
+
+	Book newBook(author, title, year, price);
+
+	return newBook;
+}
+
 void BookOperations::printCatalog(vector<Book>& books)
 {
 	cout << "BOOK CATALOG:\n" << endl;
@@ -91,26 +125,3 @@ void BookOperations::searchAuthorOrTitle(vector<Book>& books)
 		cout << "No results for " << userSearch << endl;
 }
 
-Book BookOperations::setVectorInfo()
-{
-	string author;
-	string title;
-	int year;
-	float price;
-
-	cout << "Enter author: ";
-	getline(cin >> ws, author); //getline(cin, author);
-	cout << "Enter title: ";
-	getline(cin >> ws, title);
-	cout << "Enter year: ";
-	cin >> year;
-	//cin.ignore();
-	cout << "Enter price: ";
-	cin >> price;
-	//cin.ignore();
-	cout << endl;
-
-	Book newBook(author, title, year, price);
-
-	return newBook;
-}

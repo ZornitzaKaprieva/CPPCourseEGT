@@ -16,3 +16,4 @@ private:
 	int catalogSize;
 };
 
+
