@@ -38,17 +38,9 @@ Book BookOperations::setVectorInfo()
 	cin.ignore();
 	cout << "Enter price: ";
 	cin >> price;
-	//b.setPrice(price);
+	b.setPrice(price);
 	cin.ignore();
 	cout << endl;
-
-	//Book::setInfo(); //instead enter...
-	//b.setInfo();
-	/*b.setAuthor(author);
-	b.setTitle(title);
-	b.setYear(year);
-	b.setPrice(price);*/
-
 
 	Book newBook(author, title, year, price);
 
