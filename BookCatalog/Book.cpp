@@ -15,7 +15,7 @@ Book::Book(string _author, string _title, int _year, float _price) //:: Scope re
 	this->title = _title;
 	this->year = _year;
 	this->price = _price;
-	//setPrice(price);
+	setPrice(price);
 	//setInfo();
 }
 
@@ -24,7 +24,7 @@ void Book::setInfo()
 {
 	setAuthor(author);
 	setTitle(title);
-	setYear(year);
+	setYear2(year);
 	setPrice(price);
 }
 
@@ -43,6 +43,7 @@ void Book::setAuthor(string _author)
 	this->author = _author;
 }
 
+
 void Book::setTitle(string _title)
 {
 	cout << "Title: ";
@@ -52,6 +53,18 @@ void Book::setTitle(string _title)
 }
 
 void Book::setYear(int _year)
+{
+	while (_year < 1900 || _year > 2024)
+	{
+		cout << "There is no book published in " << _year << " in the catalog.\n";
+		cout << "Year: ";
+		cin >> _year;
+
+	} 
+
+	this->year = _year;
+}
+void Book::setYear2(int _year)
 {
 	do
 	{
@@ -66,17 +79,30 @@ void Book::setYear(int _year)
 	this->year = _year;
 }
 
+
 void Book::setPrice(float _price)
+{
+	while (_price <= 0)
+	{
+		cout << "There is no book with price BGN " << _price << " in the catalog." << endl;
+		cout << "Price: ";
+		cin >> _price;
+	} 
+
+	this->price = _price;
+}
+
+void Book::setPrice2(float _price)
 {
 	do
 	{
 		cout << "Price: ";
 		cin >> _price;
 
-		if (_price < 0)
+		if (_price <= 0)
 			cout << "There is no book with price BGN " << _price << " in the catalog." << endl;;
 
-	} while (_price < 0);
+	} while (_price <= 0);
 
 	this->price = _price;
 }

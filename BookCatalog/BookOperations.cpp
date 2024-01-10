@@ -28,16 +28,17 @@ Book BookOperations::setVectorInfo()
 	int year;
 	float price;
 
-cout << "Enter author: ";
+	cout << "Enter author: ";
 	getline(cin >> ws, author); //getline(cin, author);
 	cout << "Enter title: ";
 	getline(cin >> ws, title);
 	cout << "Enter year: ";
 	cin >> year;
+	b.setYear(year);
 	cin.ignore();
-	//setPrice(price);
 	cout << "Enter price: ";
 	cin >> price;
+	//b.setPrice(price);
 	cin.ignore();
 	cout << endl;
 
