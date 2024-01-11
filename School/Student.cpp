@@ -26,7 +26,6 @@ Student Student::setStudentInfo()
 	return newStudent;
 }
 
-
 void Student::printStudentInfo()
 {
 	cout << "Student " << getStudentID() << ": " << getStudentName() << endl;

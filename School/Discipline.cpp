@@ -11,7 +11,7 @@ Discipline::Discipline(string _disciplineName, int _lecturesCount, int _exercise
 	this->exercisesCount = _exercisesCount;
 }
 
-Discipline Discipline::setDisciplineInfo() //todo vector  displines
+Discipline Discipline::setDisciplineInfo() //todo vector displines
 {
 	string disciplineName;
 	int lectures;

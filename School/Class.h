@@ -13,24 +13,29 @@ class Class
 public:
 	Class();
 	Class(string);
+	Class(string, Student&, Teacher&);
 	int setClassSize();
 	int setTeachersTeam();
 	
 	void fillTeachersAndStudentsInClass(vector<Student>&, vector<Teacher>&);
-	void printStudentsAnTeachersList(vector<Student>&, vector<Teacher>&);
+	void printStudentsAndTeachersList(vector<Student>&, vector<Teacher>&); 
 	
 	void fillStudentsInClass(vector<Student>&);
 	void fillTeachersInClass(vector<Teacher>&);
 	void printStudentsList(vector<Student>&);
 	void printTeachersList(vector<Teacher>&);
+	
 
-	string setClassName2(); ///new
 	void setClassID(string);
+	string setClassName1(string);
+	string setClassName2();
 	string getClassID();
-	
 
+	Class setClassVInfo(string, vector<Student>&, vector<Teacher>&); // => void printClassStudentsAndTeachersList(string, vector<Student>&, vector<Teacher>&); //new
+	void printClassNameInfo(); 
 	
-
 private:
 	string classID;
+	Student students;
+	Teacher teachers;
 };

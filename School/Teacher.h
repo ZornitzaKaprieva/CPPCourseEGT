@@ -23,7 +23,6 @@ public:
 	void fillTeacherList(vector<Teacher>&);
 	Teacher setTeacherVInfo();
 	void printTeachersList(vector<Teacher>&);
-
 private:
 	string teacherName;
 	string teacherTitle;
