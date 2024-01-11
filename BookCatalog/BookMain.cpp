@@ -9,11 +9,10 @@
 
 int main()
 {
-	Book b1("Roald Dahl", "Matilda", 2020, 25.0);
+	Book b1("Roald Dahl", "Matilda", 2, 25.0);
 	b1.displayInfo();
-	/*Book b2;
-	b2.setInfo();
-	b2.displayInfo();*/
+	b1.setInfo();
+	b1.displayInfo();
 
 	vector<Book> books;
 	BookOperations o1;

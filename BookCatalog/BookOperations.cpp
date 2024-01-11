@@ -30,8 +30,10 @@ Book BookOperations::setVectorInfo()
 
 	cout << "Enter author: ";
 	getline(cin >> ws, author); //getline(cin, author);
+	b.setAuthor(author);
 	cout << "Enter title: ";
 	getline(cin >> ws, title);
+	b.setTitle(title);
 	cout << "Enter year: ";
 	cin >> year;
 	b.setYear(year);

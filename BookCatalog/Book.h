@@ -18,10 +18,10 @@ public:
 	void setTitle(string);
 	string getTitle() const;
 	void setYear(int);
-	void setYear2(int);
+	
 	int getYear() const;
 	void setPrice(float);
-	void setPrice2(float);
+	
 	float getPrice() const;
 	void setInfo();//new
 	void displayInfo();
