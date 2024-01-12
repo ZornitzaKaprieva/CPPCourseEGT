@@ -21,6 +21,9 @@
     <ClInclude Include="Screening.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Cinema.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Hall.cpp">
@@ -30,6 +33,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="mainCinema.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cinema.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
