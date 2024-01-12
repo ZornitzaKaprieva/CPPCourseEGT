@@ -49,28 +49,46 @@ int Class::setTeachersTeam()
 	return size;
 }
 
-//Как да създам веkтор за всеки клас в училището?
-//Class Class::setClassVInfo(string className, vector<Student>& students, vector<Teacher>& teachers)
+//to fix: Class Class::setClassVInfo(): 
+//void Class::fillClassList(vector<Class>& classes)
 //{
-//	string className;
-//	Class c; //classes;
-//	Teacher t; // teachers;
-//	Student s; // students;
-//
-//	cout << "Class Name: ";
-//	getline(cin >> ws, className);
-//	c.setClassName1(className);
-//	c.fillTeachersAndStudentsInClass(students, teachers);
-//	cout << endl;
-//
-//	this->classID = className;
-//	this->students = s;
-//	this->teachers = t;
-//
-//
-//	Class newClass(className, students, teachers);
-//	return newClass;
+//	Class c;
+//	int size = c.setClassSize();
+//	for (int i = 0; i < size; i++)
+//	{
+//		Class c;
+//		classes.setClassVInfo(c);
+//		classes.push_back(c);
+//		
+//	}
 //}
+
+
+//Как да създам веkтор с информация за всеки клас в училището?
+Class Class::setClassVInfo() //old: Class Class::setClassVInfo(string className, vector<Student>& students, vector<Teacher>& teachers)
+{
+	Class c; //classes;
+	Teacher t; // teachers;
+	Student s; // students;
+
+	string className;
+	vector<Student> students;
+	vector<Teacher> teachers;
+
+	cout << "Class Name: ";
+	getline(cin >> ws, className);
+	c.setClassName1(className);
+	c.fillTeachersAndStudentsInClass(students, teachers);
+	cout << endl;
+
+	this->classID = className;
+	this->students = s;
+	this->teachers = t;
+
+	Class newClass(c.getClassID(), students, teachers); //Error: How to put classID?
+	return newClass;
+}
+
 
 void Class::fillTeachersAndStudentsInClass(vector<Student>& students, vector<Teacher>& teachers)
 {

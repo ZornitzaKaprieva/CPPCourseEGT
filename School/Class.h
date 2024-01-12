@@ -31,7 +31,8 @@ public:
 	string setClassName2();
 	string getClassID();
 
-	Class setClassVInfo(string, vector<Student>&, vector<Teacher>&); // => void printClassStudentsAndTeachersList(string, vector<Student>&, vector<Teacher>&); //new
+	Class setClassVInfo(); // string, vector<Student>&, vector<Teacher>& //=> void printClassStudentsAndTeachersList(string, vector<Student>&, vector<Teacher>&); //new
+	void fillClassList(vector<Class>&); //new
 	void printClassNameInfo(); 
 	
 private:
