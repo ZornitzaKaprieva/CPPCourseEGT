@@ -34,7 +34,7 @@ int Screening::getSoldTickets() {
     return this->soldTickets;
 }
 
-void Screening::print() {
+void Screening::printInfo() {
     cout << " Projection is: "
         << this->getMovieName() << "  "
         << this->getSoldTickets() << ". " << endl;

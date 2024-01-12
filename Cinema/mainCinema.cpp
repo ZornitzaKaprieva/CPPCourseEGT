@@ -16,8 +16,8 @@ int main() {
 
 	Hall h1("Hall 8", 80, screenings);
 	Hall h2("Hall 9", 90, screenings);
-	h1.print();
-	h2.print();
+	h1.printInfo();
+	h2.printInfo();
 	cout << "\n.........." << endl;
 
 	Screening sc3("Indian Jones", 40);
@@ -27,12 +27,12 @@ int main() {
 	otherScreenings.push_back(sc3);
 	otherScreenings.push_back(sc4);
 	Hall h3("Hall 10", 100, otherScreenings);
-	h3.print();
+	h3.printInfo();
 	cout << "\n.........." << endl;
 
 	Screening sc5("Nemo 2", 55);
 	h3.addScreening(sc5);
-	h3.print();
+	h3.printInfo();
 	cout << "\n.........." << endl;
 
 
@@ -41,7 +41,7 @@ int main() {
 	halls.push_back(h2);
 	halls.push_back(h3);
 	Cinema cinema("Arena", "Sofia", halls);
-	cinema.print();
+	cinema.printInfo();
 	cout << "\n.........." << endl;
 
 	string movieName;
@@ -59,8 +59,8 @@ int main() {
 
 			if (movieName == currentMovieName) {
 				cout << " We found projection " << scrObj.getMovieName() << endl;
-				scrObj.print();
-				h.print();
+				scrObj.printInfo();
+				h.printInfo();
 			}
 		}
 	}

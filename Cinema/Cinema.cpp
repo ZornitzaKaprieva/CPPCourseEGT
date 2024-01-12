@@ -7,10 +7,10 @@ Cinema::Cinema(string name, string address, vector<Hall> halls) {
     setHallsList(halls);
 }
 
-void Cinema::print() {
+void Cinema::printInfo() {
     cout << " Cinema name " << getName() << " address " << getAddress() << " ";
     for (int i = 0; i < hallsList.size(); i++) {
-        hallsList.at(i).print();
+        hallsList.at(i).printInfo();
         cout << endl;
     }
 }

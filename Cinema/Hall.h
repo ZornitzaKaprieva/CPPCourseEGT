@@ -16,7 +16,7 @@ public:
     void setName(string);
     string getName();
     void setSeats(int);
-    void print();
+    void printInfo();
 private:
     string name;
     int seats;

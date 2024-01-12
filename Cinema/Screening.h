@@ -9,7 +9,7 @@ public:
     void setSoldTickets(int);
     string getMovieName();
     int getSoldTickets();
-    void print();
+    void printInfo();
 private:
     string movieName;
     int soldTickets;

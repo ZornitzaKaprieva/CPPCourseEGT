@@ -37,7 +37,7 @@ void Hall::setSeats(int capacity)
 {
 	this->seats = capacity;
 }
-void Hall::print()
+void Hall::printInfo()
 {
 	
 	cout << "Hall is " << getName() << " with " << this->seats << " seats"; // this->name

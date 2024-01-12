@@ -16,7 +16,7 @@ public:
     void setHallsList(vector<Hall>);
     vector<Hall> getHallsList();
     void addHalltoList(Hall);
-    void print();
+    void printInfo();
 
 private:
     string name;
