@@ -32,13 +32,15 @@ string Class::setClassName1(string name)
 	return id;
 }
 
-string Class::setClassName2() 
+Class Class::setClassName2() 
 {
 	string id;
 	cout << "Class ID: ";
 	cin >> id;
 	this->classID = id;
-	return id;
+
+	Class newClass(id); //new 
+	return newClass;// new
 }
 
 int Class::setTeachersTeam()
@@ -64,30 +66,30 @@ int Class::setTeachersTeam()
 //}
 
 
-//Как да създам веkтор с информация за всеки клас в училището?
-Class Class::setClassVInfo() //old: Class Class::setClassVInfo(string className, vector<Student>& students, vector<Teacher>& teachers)
-{
-	Class c; //classes;
-	Teacher t; // teachers;
-	Student s; // students;
-
-	string className;
-	vector<Student> students;
-	vector<Teacher> teachers;
-
-	cout << "Class Name: ";
-	getline(cin >> ws, className);
-	c.setClassName1(className);
-	c.fillTeachersAndStudentsInClass(students, teachers);
-	cout << endl;
-
-	this->classID = className;
-	this->students = s;
-	this->teachers = t;
-
-	Class newClass(c.getClassID(), students, teachers); //Error: How to put classID?
-	return newClass;
-}
+//How do I create an object with information for each class in the school?
+//Class Class::setClassVInfo() //old: Class Class::setClassVInfo(string className, vector<Student>& students, vector<Teacher>& teachers)
+//{
+//	Class c; //classes;
+//	Teacher t; // teachers;
+//	Student s; // students;
+//
+//	string className;
+//	vector<Student> students;
+//	vector<Teacher> teachers;
+//
+//	cout << "Class Name: ";
+//	getline(cin >> ws, className);
+//	c.setClassName1(className);
+//	c.fillTeachersAndStudentsInClass(students, teachers);
+//	cout << endl;
+//
+//	this->classID = className;
+//	this->students = s;
+//	this->teachers = t;
+//
+//	Class newClass(c.getClassID(), students, teachers); //Error: How to put classID?
+//	return newClass;
+//}
 
 
 void Class::fillTeachersAndStudentsInClass(vector<Student>& students, vector<Teacher>& teachers)
@@ -146,7 +148,7 @@ void Class::printStudentsAndTeachersList(vector<Student>& students, vector<Teach
 {
 	Class c;
 	c.getClassID(); //cout << this->classID << endl;
-	cout << endl << this->classID << " Student List: " << endl;
+	cout << this->classID << " Student List: " << endl;
 	for (int i = 0; i < students.size(); i++)
 	{
 		students.at(i).printStudentInfo();

@@ -15,6 +15,7 @@ public:
 	School(string);
 	School(string, Class&);
 	School(string, Student&, Teacher&);
+	School(Class&, Student&, Teacher&);
 	int setClassesNum();
 	void setSchoolName(string);
 	string getSchoolName();
@@ -22,6 +23,7 @@ public:
 	void printClassesInSchool(string, vector<Student>&, vector<Teacher>&);
 	void fillClassesWithTeachersAndStudents(vector<Class>&, vector<Student>&, vector<Teacher>&);
 	void printClassStudentsAnTeachersList(vector<Class>&, vector<Student>&, vector<Teacher>&);
+	Class setClassVInfo(); //vector<Class>&, vector<Student>&, vector<Teacher>&
 private:
 	string schoolName;
 	int classesNum;
