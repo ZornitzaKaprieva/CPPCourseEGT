@@ -5,7 +5,7 @@
 class Catalog
 {
 public: 
-	Catalog(std::string, std::string, std::string, std::string, std::string, std::string, float);
+	Catalog(std::string, std::string, std::string, std::string, std::string, int, float);
 	virtual void printInfo() = 0;
 	void setName(std::string);
 	std::string getName(void) const;
@@ -17,8 +17,8 @@ public:
 	std::string getActors(void) const;
 	void setCountry(std::string);
 	std::string getCountry(void) const;
-	void setYear(std::string);
-	std::string getYear(void) const;
+	void setYear(int);
+	int getYear(void) const;
 	void setRating(float);
 	float getRating(void) const;
 	
@@ -29,7 +29,7 @@ private:
 	std::string director;
 	std::string actors;
 	std::string country;
-	std::string year;
+	int year;
 	float rating;
 
 

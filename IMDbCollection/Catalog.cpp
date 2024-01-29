@@ -3,7 +3,7 @@
 
 
 Catalog::Catalog(std::string name, std::string genre, std::string director, std::string actors, 
-	std::string country, std::string year, float rating)
+	std::string country, int year, float rating)
 {
 	setName(name);
 	setGenre(genre);
@@ -64,18 +64,22 @@ std::string Catalog::getCountry(void) const
 	return this->country;
 }
 
-void Catalog::setYear(std::string year)
+void Catalog::setYear(int year)
 {
 	this->year = year;
 }
 
-std::string Catalog::getYear(void) const
+int Catalog::getYear(void) const
 {
 	return this->year;
 }
 
 void Catalog::setRating(float rating)
 {
+	if (rating <= 0)
+	{
+		rating = 1;
+	}
 	this->rating = rating;
 }
 

@@ -5,8 +5,11 @@
 class Series : public Catalog
 {
 public:
-	Series(std::string, std::string, std::string, std::string, std::string, std::string, float, int, int, int);
+	Series(std::string, std::string, std::string, std::string, std::string, int, std::string, float, int, int, int);
+	~Series();
 	void printInfo() override;
+	void setLastYear(std::string);
+	std::string getLastYear(void) const;
 	void setSeasons(int);
 	int getSeasons(void) const;
 	void setEpisodes(int);
@@ -15,6 +18,7 @@ public:
 	int getDurationOfEpisode(void) const;
 private:
 	int seasons;
+	std::string lastYear; // int or "-" 
 	int	episodes;
 	int	durationOfEpisode;
 

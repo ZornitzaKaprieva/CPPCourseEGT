@@ -4,7 +4,7 @@ using std::cout;
 using std::endl;
 
 Movie::Movie(std::string name, std::string genre, std::string director, std::string actors,
-	std::string country, std::string year, float rating, int duration) : Catalog(name, genre, director, actors, country, year, rating)
+	std::string country, int year, float rating, int duration) : Catalog(name, genre, director, actors, country, year, rating)
 {
 	setDuration(duration);
 }
@@ -20,6 +20,10 @@ void Movie::printInfo()
 
 void Movie::setDuration(int duration)
 {
+	if (duration <= 0)
+	{
+		duration = 1;
+	}
 	this->duration = duration;
 }
 

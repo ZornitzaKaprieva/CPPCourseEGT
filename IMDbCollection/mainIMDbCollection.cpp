@@ -14,10 +14,10 @@ using std::endl;
 
 int main()
 {
-//Movie(std::string name, std::string genre, std::string director, std::string actors, std::string country, std::string year, float rating, int duration)
-	Catalog* c1 = new Movie("Wag the dog", "Comedy/Drama", "Barry Levinson", "Dustin Hoffman, Robert De Niro, Anne Hache", "USA", "1997", 7.1, 97);
+	//Movie(std::string name, std::string genre, std::string director, std::string actors, std::string country, std::string year, float rating, int duration)
+	Catalog* c1 = new Movie("Wag the dog", "Comedy/Drama", "Barry Levinson", "Dustin Hoffman, Robert De Niro, Anne Hache", "USA", 1997, 7.1, 97);
 	//Series(std::string name, std::string genre, std::string director, std::string actors, std::string country, std::string year, float rating, int seasons, int episodes, int durationOfEpisode)
-	Catalog* c2 = new Series("Friends", "Comedy/Romance", "David Crane, Marta Kaufman", "Jennifer Aniston, Cortney Cox, Lisa Kudrow, Matt LeBlanc, Matthew Perry, David Schwimmer", "USA", "1994 - 2004", 8.9, 10, 235, 23);
+	Catalog* c2 = new Series("Friends", "Comedy/Romance", "David Crane, Marta Kaufman", "Jennifer Aniston, Cortney Cox, Lisa Kudrow, Matt LeBlanc, Matthew Perry, David Schwimmer", "USA", 1994, "2004", 8.9, 10, 235, 23);
 
 	/*c1->printInfo();
 	c2->printInfo();*/
