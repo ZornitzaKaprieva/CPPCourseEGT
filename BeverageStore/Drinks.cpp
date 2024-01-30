@@ -12,7 +12,7 @@ Drinks::Drinks(std::string name = "Add name", std::string type = "Add type", flo
 
 void Drinks::printDrinks(void) const
 {
-	cout << getName() << " " << getType() << " PRICE BGN:" << getPrice() << " Quantity: " << getQuantity() << " ";
+	cout << getName() << ", " << getType() << " PRICE BGN:" << getPrice() << " Quantity: " << getQuantity() << " ";
 }
 
 void Drinks::setName(std::string name)

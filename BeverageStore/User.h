@@ -11,9 +11,13 @@
 class User
 {
 public:
-	User(std::string, std::vector<Purchase>&);
+	User(std::string, std::vector<Purchase*>);
+	void setUserName(std::string);
+	std::string getUserName(void) const;
+	void getAllPurchases(std::vector<Purchase*>);
+	void printClientInfo();
 private:
 	std::string username;
-	std::vector<Purchase> listOfPurchase;// списък / вектор от поръчки
+	std::vector<Purchase*> listOfPurchases;// списък / вектор от поръчки
 };
 

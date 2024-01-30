@@ -29,7 +29,7 @@ double Alcoholic::calculatePriceWithParam(double getPrice) // Quantity * (Price 
 void Alcoholic::printDrinks(void) const
 {
 	Drinks::printDrinks();
-	std::cout << "Volume: " << getVolume() << " TAX: " << getTax() << std::endl;
+	std::cout << "Volume: " << getVolume() << " TAX: " << getTax() << std::endl;;
 }
 
 void Alcoholic::setVolume(double volume)

@@ -24,18 +24,14 @@ void Purchase::getPurchasedDrinks(std::vector<Drinks*> drinks)
 	for (int i = 0; i < drinks.size(); i++) // print info + get the price of each drink
 	{
 		drinks.at(i)->printDrinks();
+		cout << "Price BGN: ";
 		totalPrice += drinks.at(i)->calculatePriceWithParam(drinks.at(i)->getPrice());
+	
 	}
-	cout << "Total price: " << totalPrice << endl;
+	cout << "Total price: BGN " << totalPrice << endl;
 }
 
-
-double Purchase::calculateTotalPrice() //todo
-{
-	return 0.0;
-}
-
-void Purchase::printPurchase() //todo
+void Purchase::printPurchase() 
 {
 	cout << getDate() << ":  ";
 	getPurchasedDrinks(this->drinks);
