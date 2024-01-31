@@ -7,7 +7,7 @@ public:
 	void availableSeats(int[], int);
 	~Airplane();
 private:
- int size;
+	int size;
 	int seats[];
 
 	

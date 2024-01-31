@@ -53,5 +53,4 @@ void Airplane::printSeats(int seats[], int size)
 
 Airplane::~Airplane()
 {
-	delete[] seats;
 }
