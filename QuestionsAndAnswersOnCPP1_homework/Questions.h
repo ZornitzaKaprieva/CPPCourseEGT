@@ -19,5 +19,11 @@ Given a snippet of C++ code containing a for loop, explain what the loop does, i
 4.  Function Usage:
 Write about how functions prevent code duplication and give an example of a simple C++ function that calculates the square of a number.
 
+5.  Memory Management:
+Discuss the importance of memory management in C++ and explain the difference between stack and heap memory allocation.
+
+6. Object-Oriented Programming
+Explain the concept of encapsulation in C++ and how it is achieved using classes.
+
 
 */

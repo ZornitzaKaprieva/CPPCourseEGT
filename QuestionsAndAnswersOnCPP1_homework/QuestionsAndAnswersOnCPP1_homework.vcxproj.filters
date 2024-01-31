@@ -30,5 +30,11 @@
     <ClInclude Include="Answer4_FunctionUsage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Answer5_MemoryManagement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Answer6_ObjectOrientedProgramming.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

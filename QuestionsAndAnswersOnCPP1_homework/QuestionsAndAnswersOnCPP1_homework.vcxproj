@@ -130,6 +130,8 @@
     <ClInclude Include="Answer3_CodeAnalysis.h" />
     <ClInclude Include="Answer2_ConceptClarification.h" />
     <ClInclude Include="Answer4_FunctionUsage.h" />
+    <ClInclude Include="Answer5_MemoryManagement.h" />
+    <ClInclude Include="Answer6_ObjectOrientedProgramming.h" />
     <ClInclude Include="Questions.h" />
     <ClInclude Include="Answer1_SyntaxExplanation.h" />
   </ItemGroup>
