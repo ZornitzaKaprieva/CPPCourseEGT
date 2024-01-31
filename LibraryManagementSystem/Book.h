@@ -4,15 +4,15 @@
 class Book
 {
 public:
-	Book(std::string, std::string, std::string);
-	void setTitle(std::string);
-	std::string getTitle(void) const;
-	void setAuthor(std::string);
-	std::string getAuthor(void) const;
-	void setISBN(std::string);
-	std::string getISBN(void) const;
-	void display(void) const;
-	~Book();
+	Book(std::string, std::string, std::string); //constructor with parameters
+	void setTitle(std::string); //setter for title
+	std::string getTitle(void) const; //getter for title
+	void setAuthor(std::string);  //setter for author
+	std::string getAuthor(void) const; //getter for author
+	void setISBN(std::string);  //setter for ISBN
+	std::string getISBN(void) const; //getter for ISBN
+	void display(void) const; //display info for book
+	~Book(); //destructor
 private:
 	std::string title;
 	std::string author;

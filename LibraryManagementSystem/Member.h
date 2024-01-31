@@ -4,16 +4,16 @@
 class Member
 {
 public:
-	Member(std::string, int, std::string);
-	void setName(std::string);
-	std::string getName(void) const;
-	void setAge(int);
-	int getAge(void) const;
-	void setMemberID(std::string);
-	std::string getMemberID(void) const;
-	void display(void) const;
-	void borrowBook(Book*);
-	~Member();
+	Member(std::string, int, std::string); //constructor with parameters
+	void setName(std::string); //setter for name
+	std::string getName(void) const; //getter for name
+	void setAge(int); //setter for age
+	int getAge(void) const; //getter for age
+	void setMemberID(std::string);//setter for member ID
+	std::string getMemberID(void) const; //getter for member ID
+	void display(void) const; //display info for member
+	void borrowBook(Book*); //function that takes a pointer to a Book object.
+	~Member(); //destructor
 private:
 	std::string name;
 	int age;

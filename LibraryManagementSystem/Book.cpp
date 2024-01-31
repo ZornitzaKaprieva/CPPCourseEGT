@@ -9,7 +9,7 @@ Book::Book(std::string _title, std::string _author, std::string _isbn)
 	setISBN(_isbn);
 }
 
-void Book::setTitle(std::string _title)
+void Book::setTitle(std::string _title) //Book title should be more than 2 characters
 {
 	while (_title.length() < 2)
 	{
@@ -26,7 +26,7 @@ std::string Book::getTitle(void) const
 	return this->title;
 }
 
-void Book::setAuthor(std::string _author)
+void Book::setAuthor(std::string _author) //Author name should be more than 2 characters
 {
 	while (_author.length() < 2)
 	{
@@ -44,7 +44,7 @@ std::string Book::getAuthor(void) const
 	return this->author;
 }
 
-void Book::setISBN(std::string _isbn)
+void Book::setISBN(std::string _isbn) //ISBN should be ten-digit number
 {
     while (_isbn.length() != 10 )
     {

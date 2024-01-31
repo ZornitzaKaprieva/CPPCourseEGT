@@ -9,7 +9,7 @@ Member::Member(std::string _name, int _age, std::string _memberID)
 	setMemberID(_memberID);
 }
 
-void Member::setName(std::string _name)
+void Member::setName(std::string _name) //Member name should be more than 2 characters
 {
 	while (_name.length() < 2)
 	{
@@ -26,7 +26,7 @@ std::string Member::getName(void) const
 	return this->name;
 }
 
-void Member::setAge(int _age)
+void Member::setAge(int _age)  //Member age should be over 7 yeras old
 {
 	while (_age < 7)
 	{
@@ -42,7 +42,7 @@ int Member::getAge(void) const
 	return this->age;
 }
 
-void Member::setMemberID(std::string _memberID)
+void Member::setMemberID(std::string _memberID) //Member ID should be 7 characters
 {
 	while (_memberID.length() != 7)
 	{
