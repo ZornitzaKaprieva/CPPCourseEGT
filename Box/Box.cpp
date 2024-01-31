@@ -41,7 +41,6 @@ void operator<<(ostream& COUT, Box& box) //& = passing by reference: passing the
         << box.getLength() << "cm." << std::endl;
 }
 
-
 void Box::setWidth(int width) {
     while (width <= 0) {
         cout << "Please enter a positive number for width!: ";
@@ -54,7 +53,6 @@ void Box::setWidth(int width) {
 int Box::getWidth(void) const {
     return this->width;
 }
-
 
 void Box::setLength(int length) {
     while (length <= 0) {
@@ -81,8 +79,6 @@ void Box::setHeight(int height) {
 int Box::getHeight(void) const {
     return this->height;
 }
-
-
 
 void Box::printBoxInfo() {
     cout << "This box has width " << this->getWidth() << "cm, height " << getHeight() << "cm and length "
