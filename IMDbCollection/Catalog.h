@@ -21,7 +21,6 @@ public:
 	int getYear(void) const;
 	void setRating(float);
 	float getRating(void) const;
-	
 	~Catalog();
 private:
 	std::string name;

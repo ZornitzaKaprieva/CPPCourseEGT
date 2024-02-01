@@ -15,7 +15,7 @@ void Movie::printInfo()
 	cout << "Director: " << getDirector() << "\nStars: " << getActors() << endl;
 	cout << "Country: " << getCountry() << "\nYear: " << getYear() << endl;
 	cout << "Rating: " << getRating() << "\nDuration: " << getDuration() << " min." << endl;
-	cout << endl;
+	cout << endl; 
 }
 
 void Movie::setDuration(int duration)
@@ -33,5 +33,4 @@ int Movie::getDuration(void) const
 }
 
 Movie::~Movie()
-{
-}
+{}

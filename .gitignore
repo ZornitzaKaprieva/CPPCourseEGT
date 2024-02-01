@@ -398,3 +398,5 @@ FodyWeavers.xsd
 *.sln.iml
 /QuestionsAndAnswersOnCPP1_homework/QuestionsAndAnswersOnCPP1_homework.vcxproj
 /QuestionsAndAnswersOnCPP1_homework/QuestionsAndAnswersOnCPP1_homework.vcxproj.filters
+/IMDbCollection/IMDbCollection.vcxproj.filters
+/IMDbCollection/IMDbCollection.vcxproj

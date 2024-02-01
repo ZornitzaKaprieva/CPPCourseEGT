@@ -1,7 +1,6 @@
 #include "Catalog.h"
 #include<string>
 
-
 Catalog::Catalog(std::string name, std::string genre, std::string director, std::string actors, 
 	std::string country, int year, float rating)
 {
@@ -89,4 +88,5 @@ float Catalog::getRating(void) const
 }
 
 Catalog::~Catalog()
-{}
+{
+}

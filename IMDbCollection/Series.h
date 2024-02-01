@@ -6,7 +6,6 @@ class Series : public Catalog
 {
 public:
 	Series(std::string, std::string, std::string, std::string, std::string, int, std::string, float, int, int, int);
-	~Series();
 	void printInfo() override;
 	void setLastYear(std::string);
 	std::string getLastYear(void) const;
@@ -16,6 +15,7 @@ public:
 	int getEpisodes(void) const;
 	void setDurationOfEpisode(int);
 	int getDurationOfEpisode(void) const;
+	~Series();
 private:
 	int seasons;
 	std::string lastYear; // int or "-" 

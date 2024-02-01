@@ -26,7 +26,6 @@ void Series::printInfo()
 void Series::setLastYear(std::string lastYear)
 {
 	this->lastYear = lastYear;
-
 }
 
 std::string Series::getLastYear(void) const
@@ -42,7 +41,6 @@ void Series::setSeasons(int seasons)
 	}
 
 	this->seasons = seasons;
-
 }
 
 int Series::getSeasons(void) const
@@ -57,7 +55,6 @@ void Series::setEpisodes(int episodes)
 		episodes = 1;
 	}
 	this->episodes = episodes;
-
 }
 
 int Series::getEpisodes(void) const
