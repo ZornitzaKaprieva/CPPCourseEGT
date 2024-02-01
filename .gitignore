@@ -402,3 +402,5 @@ FodyWeavers.xsd
 /IMDbCollection/IMDbCollection.vcxproj
 /AirplaneReservationSystem/AirplaneReservationSystem.vcxproj
 /AirplaneReservationSystem/AirplaneReservationSystem.vcxproj.filters
+/BankAccount/BankAccount.vcxproj
+/BankAccount/BankAccount.vcxproj.filters

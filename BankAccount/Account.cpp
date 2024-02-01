@@ -41,3 +41,7 @@ double Account::getBalance()
 	cout << "The balance on the account is BGN ";
 	return this->balance;
 }
+
+Account::~Account()
+{
+}

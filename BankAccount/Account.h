@@ -11,6 +11,7 @@ public:
 	void credit(double);
 	void debit(double);
 	double getBalance();
+	~Account();
 private:
 	double balance;
 };
