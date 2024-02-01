@@ -25,6 +25,7 @@ public:
 	float getPrice() const;
 	void setInfo();//new
 	void displayInfo();
+	~Book();
 private:
 	string author;
 	string title;

@@ -99,3 +99,6 @@ float Book::getPrice() const
 {
 	return this->price;
 }
+
+Book::~Book()
+{}

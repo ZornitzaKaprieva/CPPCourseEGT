@@ -406,3 +406,5 @@ FodyWeavers.xsd
 /BankAccount/BankAccount.vcxproj.filters
 /BeverageStore/BeverageStore.vcxproj
 /BeverageStore/BeverageStore.vcxproj.filters
+/BookCatalog/BookCatalog.vcxproj
+/BookCatalog/BookCatalog.vcxproj.filters
