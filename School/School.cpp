@@ -31,6 +31,29 @@ int School::setClassesNum()
 
 //TODO: за всеки клас -> име на класа + брой ученици + информация за учениците + брой учители + информация за учителите (+ дисциплина + информация за дисциплината;
 //from class void Class::fillTeachersAndStudentsInClass(vector<Student>& students, vector<Teacher>& teachers)
+// 
+// //да работя по това:
+//Class School::setClassVInfo() // da wniamwam kyde otiwat dannite = trqbbwa da sa w poletata ot klasa skuul
+//{
+//
+//	Class newClass;
+//	Student newStudent;
+//	Teacher newTeacher;
+//
+//	vector<Class> c;
+//	vector<Student> s;
+//	vector<Teacher> t;
+//	newClass.setClassName2();
+//	c.push_back(newClass);
+//
+//	newStudent.setStudentInfo();
+//	s.push_back(newStudent);
+//	newTeacher.setTeacherVInfo();
+//	t.push_back(newTeacher);
+//	this->org.// to do W ORIFINALNIQ WEKTOR 
+//		Class classNew(newClass, newStudent, newTeacher); //Error: How to put classID?
+//	return classNew;
+//}
 void School::fillClassesWithTeachersAndStudents(vector<Class>& classes, vector<Student>& students, vector<Teacher>& teachers)
 {
 	School s;
