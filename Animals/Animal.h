@@ -18,6 +18,7 @@ public:
 	string getBreed();
 	char getGender();
 	float getAge();
+	~Animal();
 private:
 	string breed;
 	string name;

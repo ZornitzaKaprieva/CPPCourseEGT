@@ -1,9 +1,8 @@
+#include"Dog.h"
 #include<iostream>
 #include<string>
 #include<vector>
 using namespace std;
-
-#include"Dog.h"
 
 int main()
 {
@@ -24,7 +23,7 @@ int main()
 	animals2.push_back(d1);
 	for (int i = 0; i < animals.size(); i++)
 	{
-		animals2.at(i).printInfo(); // withou bark (for Dog)
+		animals2.at(i).printInfo(); // without bark (for Dog)
 	}
 
 	return 0;

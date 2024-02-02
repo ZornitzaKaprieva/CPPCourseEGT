@@ -9,6 +9,7 @@ public:
 	void setBark(string);
 	string getBark();
 	void printInfo(); //override in the Animal printInfo(): so we can see the bark too - we call the parent printInfo() and then add additional information for Dog
+	~Dog();
 private:
 	string bark;
 

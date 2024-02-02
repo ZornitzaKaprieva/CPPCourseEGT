@@ -423,3 +423,6 @@ FodyWeavers.xsd
 /LibraryManagementSystem/LibraryManagementSystem.vcxproj.filters
 /LibraryManagementSystem/LibraryManagementSystem.vcxproj
 /LibraryManagementSystem/LibraryManagementSystem.vcxproj.filters
+/Animals/Animals.vcxproj
+/Animals/Animals.vcxproj.filters
+/Animals/Header.h

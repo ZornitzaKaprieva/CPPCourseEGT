@@ -6,7 +6,6 @@ Animal::Animal(string name, string breed, char gender, float age)
 	setBreed(breed);//this->breed = breed;
 	setGender(gender);//this->gender = gender;
 	setAge(age); //this->age = age; 
-
 }
 
 void Animal::printInfo()
@@ -75,6 +74,10 @@ char Animal::getGender()
 float Animal::getAge()
 {
 	return this->age = age;
+}
+
+Animal::~Animal()
+{
 }
 
 
