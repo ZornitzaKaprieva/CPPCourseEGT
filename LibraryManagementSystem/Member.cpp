@@ -64,7 +64,7 @@ std::string Member::getMemberID(void) const
 	return this->memberID;
 }
 
-void Member::display(void) const
+void Member::display(void) const 
 {
 	cout << "Name: " << getName() << "\n"
 		<< "Age: " << getAge() << "\n"
