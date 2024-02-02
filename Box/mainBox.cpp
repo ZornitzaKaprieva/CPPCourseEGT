@@ -2,7 +2,8 @@
 using std::cout;
 
 int main() {
-	Box box1(5, 6, 7);
+
+	Box box1(5, 6, 8);
 	Box box2(50, 60, 70);
 	Box box3 = box1 + box2; // = operator+(box1, box2);
 

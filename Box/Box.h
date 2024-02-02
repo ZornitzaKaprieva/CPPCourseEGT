@@ -7,7 +7,6 @@ class Box {
     friend void operator<<(ostream&, Box&); // = void printBoxInfo(void)
 public:
     Box(int, int, int); //create Box object with 3 parameters: width, height, length
-    ~Box();
 
     void setWidth(int);
     int getWidth(void) const;
@@ -19,6 +18,8 @@ public:
     int getHeight(void) const;
 
     void printBoxInfo(void); // = friend void operator<<(ostream&, Box&);
+
+    ~Box();
 private:
     int width;
     int height;
