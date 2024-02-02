@@ -429,3 +429,5 @@ FodyWeavers.xsd
 /CppProjectsDevStyleR/Header.h
 /CppProjectsDevStyleR/CppProjectsDevStyleR.vcxproj.filters
 /CppProjectsDevStyleR/CppProjectsDevStyleR.vcxproj
+*.vcxproj
+*.filters
