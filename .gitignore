@@ -426,3 +426,6 @@ FodyWeavers.xsd
 /Animals/Animals.vcxproj
 /Animals/Animals.vcxproj.filters
 /Animals/Header.h
+/CppProjectsDevStyleR/Header.h
+/CppProjectsDevStyleR/CppProjectsDevStyleR.vcxproj.filters
+/CppProjectsDevStyleR/CppProjectsDevStyleR.vcxproj
