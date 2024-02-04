@@ -16,6 +16,7 @@ public:
 	std::string getUserName(void) const;
 	void getAllPurchases(std::vector<Purchase*>);
 	void printClientInfo();
+	//void getTotalPrice(std::vector<Purchase*>) const; //new
 private:
 	std::string username;
 	std::vector<Purchase*> listOfPurchases;// списък / вектор от поръчки

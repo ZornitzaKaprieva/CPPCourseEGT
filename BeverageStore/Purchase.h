@@ -11,7 +11,10 @@ public:
 	void setDate(std::string);
 	std::string getDate() const;
 	void getPurchasedDrinks(std::vector<Drinks*>);
+	//void getNumOfEachAddedDrink();
 	void printPurchase();
+	void getDrinksPrice(std::vector<Drinks*>); //new
+
 private:
 	std::string date;
 	std::vector<Drinks*> drinks;

@@ -18,10 +18,12 @@ public:
 	float getPrice(void) const;
 	void setQuantity(int);
 	unsigned int getQuantity(void) const;
+
 protected:
 	std::string name;
 	std::string type; //(wine, gin, whiskey, water, juice, ice tea, …)
 	float price;
 	unsigned int quantity;
+	
 };
 
