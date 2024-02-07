@@ -3,7 +3,7 @@
 
 int c = 0; // using in void Game::update()
 
-bool Game::init(const char* title, int xpos, int ypos, int width, int height, int flags) 
+bool Game2::init(const char* title, int xpos, int ypos, int width, int height, int flags) 
 {
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) { // initializes the sdl library and returns 0 on success
 		std::cout << "SDL init success\n";
@@ -58,13 +58,13 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
 	running = true;
 	return true;
 }
-void Game::render() { //clear buffer
+void Game2::render() { //clear buffer
 	SDL_RenderClear(renderer);
 	SDL_RenderCopy(renderer, texture, &sourceRectangle, &destinationRectangle); //to crop the picture
 	//SDL_RenderCopy(renderer, texture, NULL, NULL); //thus the picture cannot move
 	SDL_RenderPresent(renderer);
 }
-void Game::handleEvents() {
+void Game2::handleEvents() {
 	SDL_Event event;
 	if (SDL_PollEvent(&event)) {
 		switch (event.type) {
@@ -73,7 +73,7 @@ void Game::handleEvents() {
 		}
 	}
 }
-void Game::update() {//for now there is nothing to update
+void Game2::update() {//for now there is nothing to update
 	c++; //c is initialized at the beginning
 
 	//this is not a good practice, better not to use it (now we only use it as an example):
@@ -86,23 +86,23 @@ void Game::update() {//for now there is nothing to update
 	}
 }
 
-void Game::clean() {
+void Game2::clean() {
 	std::cout << "cleaning game\n";
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
 }
-bool Game::isRunning() {
-	return Game::running;
+bool Game2::isRunning() {
+	return Game2::running;
 }
-Game::Game() {
-	Game::window = NULL;
-	Game::renderer = NULL;
-	Game::running = true;
-	Game::sourceRectangle.x = Game::sourceRectangle.y = Game::sourceRectangle.w = Game::sourceRectangle.h = 0;
-	Game::destinationRectangle.x = Game::destinationRectangle.y = Game::destinationRectangle.w = Game::destinationRectangle.h = 0;
+Game2::Game2() {
+	Game2::window = NULL;
+	Game2::renderer = NULL;
+	Game2::running = true;
+	Game2::sourceRectangle.x = Game2::sourceRectangle.y = Game2::sourceRectangle.w = Game2::sourceRectangle.h = 0;
+	Game2::destinationRectangle.x = Game2::destinationRectangle.y = Game2::destinationRectangle.w = Game2::destinationRectangle.h = 0;
 }
 
-Game::~Game() 
+Game2::~Game2() 
 {
 }

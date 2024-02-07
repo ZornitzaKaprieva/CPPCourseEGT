@@ -1,11 +1,11 @@
 #include "Game.h"
 #include <iostream>
-Game* game = NULL;
+Game2* game = NULL;
 const int WINDOW_WIDTH = 600;
 const int WINDOW_HEIGHT = 400;
 
 int main(int argc, char* argv[]) {
-	game = new Game();
+	game = new Game2();
 	game->init("My new window",
 		SDL_WINDOWPOS_CENTERED,
 		SDL_WINDOWPOS_CENTERED,

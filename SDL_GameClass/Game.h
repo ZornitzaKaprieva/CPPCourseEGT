@@ -1,8 +1,8 @@
 #include <SDL.h>
-class Game {
+class Game2 {
 public:
-	Game();
-	~Game();
+	Game2();
+	~Game2();
 	bool init(const char* title, int xpos, int ypos, int width, int height, int flags);
 	void render(); //image loading
 	void update();
