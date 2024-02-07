@@ -19,7 +19,7 @@ void limitFPS(Uint32 startingTick) //sec that have elapsed since library initial
 
 int main(int argc, char* args[])
 {
-	//initialize the sdl library. Accepts flags (more special parameter - can be boolean, byte, etc.):
+	//initialize the sdl library (subsystems). Accepts flags (more special parameter - can be boolean, byte, etc.):
 	SDL_Init(SDL_INIT_EVERYTHING);
 	//printf("Hello, World!");;
 
