@@ -1,4 +1,5 @@
 #include "PictureLoading.h"
+#include "TextureManager.h"
 
 SDL_Texture* playerTex;
 SDL_Rect srcRect, destRect;
@@ -43,12 +44,9 @@ void PictureLoading::init(const char* title, int width, int height, bool fullscr
 		isRunning = false; // if there are errors while creating subsystems (window and renderer)
 	}
 
-	//when we creating Texture, we will need to create a surface (this Texture initialized in PictureLoading init function)
-	SDL_Surface* tempSurface = IMG_Load("assets/player.png"); //we create temp surface (so we can get rid of it after we finished using the surface)
-	playerTex = SDL_CreateTextureFromSurface(renderer, tempSurface);
 
-	//temSurface is no longer needed, so we have to clean it up:
-	SDL_FreeSurface(tempSurface);
+	//function SDL_Texture* TextureManager::LoadTexture(const char* fileName, SDL_Renderer* ren) is static 
+	playerTex = TextureManager::LoadTexture("assets/player.png", renderer); //implement the texture
 }
 
 void PictureLoading::handleEvents()
