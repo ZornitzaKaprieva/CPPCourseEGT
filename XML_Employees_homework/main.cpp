@@ -1,10 +1,29 @@
+#include"Company.h"
+
 #include<iostream>
 #include"pugixml.h"
 using namespace std;
 using namespace pugi; // за да не викаме всеки път pugi::...
 
+
 int main()
 {
+	cout << "\nDeserializing company data (employees.xml).....Started\n\n";
+	Company::getDocumentFromXML("employees.xml");
+	Company::deserializeCompanyData();
+	for (const auto b : Company::getEmployeesList()) {
+		cout << *b << endl;
+	}
+	cout << "\nDeserializing company data (employees.xml).....Done\n\n";
+
+	cout << "\nSerializing company data (emplSaveFileOutput.xml)...... Started\n";
+	Company::generateCompanyData();
+	Company::serializeCompanyData();
+	Company::saveDocumentToXML("emplSaveFileOutput.xml");
+	cout << "\nSerializing company data (emplSaveFileOutput.xml)...... Done\n\n";
+	return 0;
+
+	/*//Without OOP
 	xml_document doc; //парсваме xml тук, имаме достъп до всички тагове
 
 	//отваряме xml file:
@@ -25,6 +44,7 @@ int main()
 		}
 		cout << endl;
 
-	}
+	}*/
+	
 	return 0;
 }
