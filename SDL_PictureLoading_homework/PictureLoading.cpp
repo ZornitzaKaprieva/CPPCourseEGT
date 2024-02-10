@@ -1,8 +1,19 @@
 #include "PictureLoading.h"
 #include "TextureManager.h"
+#include "GameObject.h"
 
-SDL_Texture* playerTex;
-SDL_Rect srcRect, destRect;
+//without GameObject class:
+/*SDL_Texture* playerTex;
+SDL_Rect srcRect, destRect;*/
+
+
+//with GameObject class
+GameObject* player1; 
+GameObject* player2; 
+GameObject* bbalPlayer; 
+
+
+
 
 PictureLoading::PictureLoading()
 {
@@ -43,10 +54,17 @@ void PictureLoading::init(const char* title, int width, int height, bool fullscr
 	{
 		isRunning = false; // if there are errors while creating subsystems (window and renderer)
 	}
+	//after successfully created window and render:
+	//without GameObject class
+	/*playerTex = TextureManager::LoadTexture("assets/player.png", renderer); //implement the texture*/
+	
+	//with GameObject class
+	player1 = new GameObject("assets/fbPlayer1.png", renderer, 0, 0);
+	player2 = new GameObject("assets/fbPlayer2.png", renderer, 50, 50);
+	bbalPlayer = new GameObject("assets/player.png", renderer, 0, 0);
 
 
-	//function SDL_Texture* TextureManager::LoadTexture(const char* fileName, SDL_Renderer* ren) is static 
-	playerTex = TextureManager::LoadTexture("assets/player.png", renderer); //implement the texture
+	
 }
 
 void PictureLoading::handleEvents()
@@ -67,14 +85,24 @@ void PictureLoading::handleEvents()
 
 void PictureLoading::update()
 {
+	//with GameObject class:
+	//player1->Update();
+	//player2->Update();
+	bbalPlayer->updateObj();
 
-	cnt++;
+	
+	//without GameObject class:
+	/*cnt++;
 	//fix src and dest Rect (to fix sizes)
 	destRect.h = 100;
 	destRect.w = 100;
 	//if we want our pic to move:
 	destRect.x = cnt; //moves very fast
-	std::cout << cnt << std::endl;
+	std::cout << cnt << std::endl;*/
+	
+	
+	
+	
 }
 
 void PictureLoading::render()
@@ -82,9 +110,13 @@ void PictureLoading::render()
 	SDL_RenderClear(renderer);
 
 	//This is where we add all of our textures to be rendered
+	//without GameObject class:
+	/*	SDL_RenderCopy(renderer, playerTex, NULL, &destRect); //renderer, playerTex, source rectangle (the part of the texture you want to draw), destination rectangle (where we want it drawn on screen; &destRect = whow big we want the image (set in update) - NULL = whole screen*/
 
-	//SDL_RenderCopy(renderer, playerTex, NULL, NULL); //renderer, playerTex, source rectangle (the part of the texture you want to draw), destination rectangle (where we want it drawn on screen); NULL = whole screen
-	SDL_RenderCopy(renderer, playerTex, NULL, &destRect); //renderer, playerTex, source rectangle (the part of the texture you want to draw), destination rectangle (where we want it drawn on screen; &destRect = whow big we want the image (set in update)
+	//with GameObject class:
+	//player1->Render();
+	//player2->Render();
+	bbalPlayer->renderObj();
 
 	SDL_RenderPresent(renderer);
 }
