@@ -4,7 +4,7 @@
 class GameObject
 {
 public:
-	GameObject(const char* textureSheet, SDL_Renderer* ren, int x, int y); //кой рендер ще ползваме
+	GameObject(const char* textureSheet, int x, int y); //no need for SDL_Renderer* ren
 	~GameObject();
 
 	void updateObj();
@@ -13,7 +13,6 @@ public:
 private:
 	int xpos; //къде искаме да поставим обекта на екрана
 	int ypos;
-	int cnt = 0; //for movement
 	SDL_Texture* objTexture;
 	SDL_Rect srcRect, destRect; //за дисплейване 
 	SDL_Renderer* renderer; //
