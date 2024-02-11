@@ -63,8 +63,8 @@ void Map::drawMap()
 		{
 			type = map[row][column];
 
-			dest.x = row * 32; //zadawame kolko piksela ]e zaeme
-			dest.y = column * 32; //zadawame kolko piksela ]e zaeme
+			dest.x = row * 32; //how many pixels to occupy
+			dest.y = column * 32;
 			switch (type)
 			{
 			case 0:

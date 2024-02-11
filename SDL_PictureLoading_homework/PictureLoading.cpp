@@ -88,7 +88,7 @@ void PictureLoading::render()
 	map->drawMap();
 	bbalPlayer->renderObj();
 
-	std::cout << "renderObj / DrawMap\n";
+	std::cout << "DrawMap / renderObj\n";
 
 	SDL_RenderPresent(renderer);
 }
