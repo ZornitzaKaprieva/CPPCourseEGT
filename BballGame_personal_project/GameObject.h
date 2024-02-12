@@ -10,7 +10,7 @@ public:
 	void updateObj();
 	void renderObj(); //specific behavior
 
-	void moveUP(); //new try to move the palyer up
+	void moveUP(); // to move the palyer
 	void moveDown();
 	void moveLeft(); 
 	void moveRight();

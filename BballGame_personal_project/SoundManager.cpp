@@ -31,7 +31,7 @@ bool SoundManager::load(const char* fileName, std::string id, int type) {
 			return true;
 		}
 	}
-	return false; //
+	return false;
 }
 
 void SoundManager::playSound(std::string id,

@@ -29,7 +29,6 @@ public:
 	void changeVolume(int change);
 	void pauseOrPlay();
 
-
 private:
 	static SoundManager* s_mInstance;//един инастан навсякъде
 	std::map<std::string, Mix_Chunk*> s_mSfxs; //променлива, която държи саун файл

@@ -1,7 +1,5 @@
 #pragma once
-
 #include "Game.h"
-
 
 class Map
 {
@@ -17,8 +15,6 @@ private:
 	SDL_Texture* border;
 	SDL_Texture* out;
 	SDL_Texture* basket;
-
-
 
 	//2d interger array:
 	int map[20][25];

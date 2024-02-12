@@ -4,7 +4,6 @@
 #include "Map.h"
 #include "SoundManager.h"
 
-
 //for the player:
 GameObject* bbalPlayer1;
 GameObject* bbalPlayer2;
@@ -12,7 +11,6 @@ GameObject* bbalPlayer2;
 Map* map;
 
 SDL_Renderer* Game::renderer = nullptr; //new 6 дефинираме го и го инициализираме с нул, защото не сме инициализрали стл още
-
 
 Game::Game()
 {
@@ -150,10 +148,8 @@ void Game::loadAndPlaySound()
 	SoundManager::Instance()->load("assets/gamer-213.wav", "game_over", 0);
 	SoundManager::Instance()->load("assets/noti-212.wav", "notification", 0);
 
-
 	SoundManager::Instance()->playMusic("spaceJam1", 0, 3); //филе, колко пъти да се повтаря, 5000?
 
-	
 	//SoundManager::Instance()->playSound("game_over", -1, 0);
 	//SoundManager::Instance()->playSound("notification", -1, 0);
 
