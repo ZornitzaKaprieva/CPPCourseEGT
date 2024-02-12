@@ -24,13 +24,11 @@ public:
 	//да зарежда файловете от папка асестс (може да са и музика, и звукови ефекти, следва да кажем кой от двата типа файла зареждаме
 	
 	bool load(const char* fileName, std::string id, int type);
-	void playSound(std::string id, int loop, int ms = 0); //puska i spira zwuka (колко пти ще се повтаря самия файл, инт мс = малко по тиха, после по-силан, по дифолт 0, защото не винаги ще го използваме
-//можем да плейваме само една музика, но няколко саунд ефекта едновремнно 
-	
+	void playSound(std::string id, int loop, int ms = 0);
 	void playMusic(std::string id, int loop, int ms = 0);
-
 	void changeVolume(int change);
 	void pauseOrPlay();
+
 
 private:
 	static SoundManager* s_mInstance;//един инастан навсякъде

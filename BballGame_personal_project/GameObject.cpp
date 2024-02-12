@@ -12,8 +12,8 @@ GameObject::GameObject(const char* textureSheet, int x, int y)
 void GameObject::updateObj()
 {
 	//for movement:
-	xpos++;
-	ypos++;
+	/*xpos++;
+	ypos++; */
 
 	srcRect.h = 32; //32
 	srcRect.w = 32; //32
@@ -22,13 +22,39 @@ void GameObject::updateObj()
 
 	destRect.x = xpos;
 	destRect.y = ypos;
-	destRect.w = srcRect.w * 2;// / 2;
+	destRect.w = srcRect.w * 2;// / 2; 
 	destRect.h = srcRect.h * 2;// / 2;
+
+}
+
+void GameObject::moveUP()
+{
+	ypos--;
+	std::cout << "Moving up\n";
+}
+
+void GameObject::moveDown()
+{
+	ypos++;
+	std::cout << "Moving down\n";
+}
+
+void GameObject::moveLeft()
+{
+	xpos--;
+	std::cout << "Moving left\n";
+}
+
+void GameObject::moveRight()
+{
+	xpos++;
+	std::cout << "Moving right\n";
 }
 
 void GameObject::renderObj()
 {
 	SDL_RenderCopy(Game::renderer, objTexture, &srcRect, &destRect);
+
 }
 
 GameObject::~GameObject()

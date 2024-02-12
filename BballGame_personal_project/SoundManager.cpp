@@ -53,11 +53,11 @@ void SoundManager::playMusic(std::string id,
 	}
 }
 
-void SoundManager::changeVolume(int c) {
+void SoundManager::changeVolume(int c) { //не работи
 	//кой канал да намали и какъв е volume
 	//1. искаме да разберем каква е текущата сила на звука 
-	int currentVolume = Mix_VolumeMusic(-1);
-	std::cout << currentVolume << "  " << Mix_VolumeMusic(-1) << std::endl;
+	int currentVolume = Mix_VolumeMusic(-1); // get current volume value and decrement or increment
+	//std::cout << currentVolume << "  " << Mix_VolumeMusic(-1) << std::endl;
 	//взимаме текущата и увеличаваме с ц 
 	currentVolume += c;
 	Mix_VolumeMusic(currentVolume);
@@ -66,12 +66,12 @@ void SoundManager::changeVolume(int c) {
 void SoundManager::pauseOrPlay()
 {
 	std::cout << Mix_PlayingMusic() << std::endl; //дали работят функциите
-	if (Mix_PlayingMusic() != 0) //ако е спряно го пуска, ако е пуснато го спира
+
+	if ( Mix_PausedMusic() == 0 ) //ако е спряно го пуска, ако е пуснато го спира
 	{
 		Mix_PauseMusic();
 	}
-	if (Mix_PausedMusic() == 1)
-	{
+	else {
 		Mix_ResumeMusic();
 	}
 

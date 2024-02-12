@@ -4,8 +4,10 @@
 #include "Map.h"
 #include "SoundManager.h"
 
+
 //for the player:
-GameObject* bbalPlayer;
+GameObject* bbalPlayer1;
+GameObject* bbalPlayer2;
 //for the field:
 Map* map;
 
@@ -53,7 +55,9 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
 	}
 
 	//after successfully created window and render:
-	bbalPlayer = new GameObject("assets/bballPlayer.png", 60, 150);
+	bbalPlayer1 = new GameObject("assets/bballPlayer1.png", 60, 150);
+	bbalPlayer2 = new GameObject("assets/bballPlayer2.png", 120, 250);
+
 	map = new Map();
 	std::cout << "Object/s created.\n";
 }
@@ -67,9 +71,52 @@ void Game::handleEvents()
 	switch (event.type)
 	{
 	case SDL_QUIT:
-		std::cout << "case SDL_QUIT\n";
+		std::cout << "QUIT event\n";
 		isRunning = false;
 		break;
+	case SDL_KEYDOWN: { 
+		if (event.key.keysym.sym == SDLK_1) { // press 1 to increase volume //не работи
+			SoundManager::Instance()->changeVolume(1);
+			std::cout << "Increase volume\n";
+		
+		}
+		if (event.key.keysym.sym == SDLK_0) { // press 0 to decrease volume //не работи
+			SoundManager::Instance()->changeVolume(-1);
+			std::cout << "Decrease volume\n";
+		
+		}
+		if (event.key.keysym.sym == SDLK_LALT) { // pressing left alt, pauses and resumes the music
+			SoundManager::Instance()->pauseOrPlay();
+			std::cout << "Music paused.\n";
+		}
+
+		if (event.key.keysym.sym == SDLK_UP) // pressing space, pauses and resumes the music
+		{ 
+			bbalPlayer1->moveUP();
+			//bbalPlayer2->moveUP();
+			std::cout << "Player UP.\n";
+		}
+
+		if (event.key.keysym.sym == SDLK_DOWN) // pressing space, pauses and resumes the music
+		{
+			bbalPlayer1->moveDown();
+
+			std::cout << "Player DOWN.\n";
+		}
+
+		if (event.key.keysym.sym == SDLK_LEFT) // pressing space, pauses and resumes the music
+		{
+			bbalPlayer1->moveLeft();
+			std::cout << "Player LEFT.\n";
+		}
+
+		if (event.key.keysym.sym == SDLK_RIGHT) // pressing space, pauses and resumes the music
+		{
+			bbalPlayer1->moveRight();
+			std::cout << "Player RIGHT.\n";
+		}
+		break;	
+	}
 	default:
 		break;
 	}
@@ -78,7 +125,8 @@ void Game::handleEvents()
 void Game::update()
 {
 	//with GameObject class:
-	bbalPlayer->updateObj();
+	bbalPlayer1->updateObj();
+	bbalPlayer2->updateObj();
 	std::cout << "Update object.\n";
 }
 
@@ -88,7 +136,8 @@ void Game::render()
 
 	//This is where we add all of our textures to be rendered
 	map->drawMap();
-	bbalPlayer->renderObj();
+	bbalPlayer1->renderObj();
+	bbalPlayer2->renderObj();
 
 	std::cout << "DrawMap / renderObj\n";
 
@@ -97,16 +146,18 @@ void Game::render()
 
 void Game::loadAndPlaySound()
 {
-	SoundManager::Instance()->load("assets/rf-16.mp3", "bg_music", 1);
+	SoundManager::Instance()->load("assets/spaceJamHitEmHigh.mp3", "spaceJam1", 1);
 	SoundManager::Instance()->load("assets/gamer-213.wav", "game_over", 0);
 	SoundManager::Instance()->load("assets/noti-212.wav", "notification", 0);
 
 
-	SoundManager::Instance()->playMusic("bg_music", 0, 5000); //филе, колко пъти да се повтаря, 5000?
+	SoundManager::Instance()->playMusic("spaceJam1", 0, 3); //филе, колко пъти да се повтаря, 5000?
 
 	
 	//SoundManager::Instance()->playSound("game_over", -1, 0);
-	SoundManager::Instance()->playSound("notification", -1, 0);
+	//SoundManager::Instance()->playSound("notification", -1, 0);
+
+	std::cout << "Play and Sound loaded.\n";
 }
 
 

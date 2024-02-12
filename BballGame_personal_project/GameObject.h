@@ -10,6 +10,11 @@ public:
 	void updateObj();
 	void renderObj(); //specific behavior
 
+	void moveUP(); //new try to move the palyer up
+	void moveDown();
+	void moveLeft(); 
+	void moveRight();
+
 private:
 	int xpos; //къде искаме да поставим обекта на екрана
 	int ypos;
