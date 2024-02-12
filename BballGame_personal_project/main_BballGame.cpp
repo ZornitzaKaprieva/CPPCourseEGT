@@ -4,7 +4,7 @@ Game* game = nullptr;
 
 int main(int argc, char* argv[])
 {
-	const int FPS = 60; //target frame
+	const int FPS = 150; //(60 е приетият параметър) target frame
 	const int frameDelay = 1000 / FPS; //max time we have between frames (how long the frame is meant to take)
 
 	Uint32 frameStart; //how long be running the game 

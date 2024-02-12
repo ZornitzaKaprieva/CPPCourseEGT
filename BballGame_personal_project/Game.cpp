@@ -88,29 +88,32 @@ void Game::handleEvents()
 			std::cout << "Music paused.\n";
 		}
 
-		if (event.key.keysym.sym == SDLK_UP) // pressing space, pauses and resumes the music
+		if (event.key.keysym.sym == SDLK_UP) // move the player up
 		{ 
 			bbalPlayer1->moveUP();
 			//bbalPlayer2->moveUP();
 			std::cout << "Player UP.\n";
 		}
 
-		if (event.key.keysym.sym == SDLK_DOWN) // pressing space, pauses and resumes the music
+		if (event.key.keysym.sym == SDLK_DOWN)  // move the player down
 		{
 			bbalPlayer1->moveDown();
+			//bbalPlayer2->moveDown();
 
 			std::cout << "Player DOWN.\n";
 		}
 
-		if (event.key.keysym.sym == SDLK_LEFT) // pressing space, pauses and resumes the music
+		if (event.key.keysym.sym == SDLK_LEFT) // move the player left
 		{
 			bbalPlayer1->moveLeft();
+			//bbalPlayer2->moveLeft();
 			std::cout << "Player LEFT.\n";
 		}
 
-		if (event.key.keysym.sym == SDLK_RIGHT) // pressing space, pauses and resumes the music
+		if (event.key.keysym.sym == SDLK_RIGHT) // move the player right
 		{
 			bbalPlayer1->moveRight();
+			//bbalPlayer2->moveRight();
 			std::cout << "Player RIGHT.\n";
 		}
 		break;	
