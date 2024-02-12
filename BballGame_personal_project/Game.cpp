@@ -54,7 +54,7 @@ void Game::init(const char* title, int width, int height, bool fullscreen)
 
 	//after successfully created window and render:
 	bbalPlayer1 = new GameObject("assets/bballPlayer1.png", 60, 150);
-	bbalPlayer2 = new GameObject("assets/bballPlayer2.png", 120, 250);
+	bbalPlayer2 = new GameObject("assets/bballPlayer2.png", 250, 250);
 
 	map = new Map();
 	std::cout << "Object/s created.\n";
