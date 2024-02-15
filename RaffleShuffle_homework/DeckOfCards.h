@@ -15,12 +15,12 @@ class DeckOfCards
 {
 public:
 	DeckOfCards();
-	Card raffleShuffle(Card* deck[52]);
+	void raffleShuffle();
 	void displayDeck() const;
 	
 	~DeckOfCards();
 private:
 	//std::vector<PlayingCard*> deck;
-	Card* deck[52];
+	Card deck[52];
 };
 

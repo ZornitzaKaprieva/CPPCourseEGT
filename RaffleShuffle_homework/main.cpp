@@ -4,16 +4,17 @@
 
 int main()
 {
-
     DeckOfCards d;
   
-    Card* deck = new Card [52];
+    //Card* deck = new Card [52];
+    Card deck [52];
   
     std::cout << "displayDeck before raffleShuffle():" << std::endl;
     d.displayDeck();
     std::cout << std::endl;
    
-    d.raffleShuffle(deck);
+    std::cout << "raffleShuffle():" << std::endl;
+    d.raffleShuffle();
     std::cout << std::endl;
 
     std::cout << "displayDeck after raffleShuffle():" << std::endl;
