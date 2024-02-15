@@ -4,7 +4,6 @@
 #include<string>
 #include<ctime>
 #include"DeckOfCards.h"
-//#include<limits> //
 
 class Player : public DeckOfCards
 {
@@ -23,7 +22,7 @@ public:
 	int finalScore(int getHand); //todo
 
 	//setter for name 
-	void setName(); //std::string name
+	void setName(); 
 private:
 	std::string playerName;
 	std::string robotName = "Dealer";

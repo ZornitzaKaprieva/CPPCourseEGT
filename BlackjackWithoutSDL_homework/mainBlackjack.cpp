@@ -7,7 +7,7 @@ int main(int argc, char* argv[])
 {
 	game = new Game();
 
-	while (game->isRun() && game->isOver())
+	while (game->isRun() && game->isNotOver())
 	{
 		game->update();
 	}

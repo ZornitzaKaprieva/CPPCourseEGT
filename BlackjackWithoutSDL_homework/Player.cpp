@@ -9,7 +9,6 @@ Player::Player()
 
 int Player::randomCard()
 {
-	
 	//DeckOfCards* temp = new DeckOfCards;
 	//temp->shuffle();//new
 	

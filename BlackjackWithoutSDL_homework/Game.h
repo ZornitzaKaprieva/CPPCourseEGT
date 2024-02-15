@@ -16,15 +16,16 @@ public:
 	void update();
 	
 	//getters
-	const bool& isRun() { return this->isRunning; } //n/o
-	const bool& isOver() { return this->isLoss; }
+	const bool& isRun() { return this->isRunning; }
+	const bool& isNotOver() const { return this->isLoss; }
+	//bool isNotOver() const { return this->isLoss; }
 
 	~Game();
 
 private:
-	bool isRunning; //n/o
+	bool isRunning;
 	char command; 
-	bool isLoss; //new
+	bool isLoss;
 	
 	Player playerBJ;
 	Player dealerBJ;
@@ -32,6 +33,7 @@ private:
 	//private functions
 	void endGame();
 	bool endGame(int& pHand, int& dHand);
+
 	//bool wantContinue();
 	/*//hit and stay  in player / game class
 	
