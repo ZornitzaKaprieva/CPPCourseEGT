@@ -149,5 +149,6 @@ istream& operator>>(istream & input,  Date & d)
     input >> mm;
     input >> yy;
     d.setDate(dd, mm, yy);
+
     return input; // enables cascading
 } // end function operator>>

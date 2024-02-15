@@ -44,11 +44,11 @@ int main()
 
    cout << "\n\nTesting input operator >> :\n";
    Date d5;
+   int dd, mm, yyyy;
    cout << "Enter dd-mm-yy:\n";
-   cin >> d5;
+   cin >> dd >> mm >> yyyy;
+   d5.setDate(dd, mm, yyyy);
    cout << d5;
-
-
 
    return 0;
 } // end main
