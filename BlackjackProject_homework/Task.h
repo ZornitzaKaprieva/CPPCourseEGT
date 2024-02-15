@@ -30,4 +30,8 @@ Class Game: Player* Dealer* (+ dealing cards, displaying the game's state, and d
 - да се спира и да се пуска - 
 Class GameInterface: buttons for hit, stay and bet.
 Class SoundEffects when dealing cards, selecting hit and stay, and when the game ends.
+
+въпроси: 
+На всяка карта отделна текстура ли се задава? 
+как да имплементирам логиката на играта в сдл проекта? 
 */

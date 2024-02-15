@@ -7,7 +7,7 @@ public:
 	Map();
 	~Map();
 
-	void loadMap(int arr[20][25]);
+	void loadMap(int arr[25][20]);
 	void drawMap();
 private:
 	SDL_Rect src, dest;
@@ -17,6 +17,6 @@ private:
 	SDL_Texture* green;
 
 	//2d interger array:
-	int map[20][25];
+	int map[25][20];
 };
 

@@ -14,7 +14,7 @@ class DeckOfCards
 {
 public:
 	DeckOfCards(); // constructor initializes deck
-	void shuffle(); // shuffles cards in deck
+	 void shuffle(); // shuffles cards in deck
 	void deal(); // deals cards in deck
 
 private:
