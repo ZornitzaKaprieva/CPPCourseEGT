@@ -30,7 +30,5 @@ int main(int argc, char* argv[])
 	game->clean();
 	game->~Game();
 	
-
-	
 	return 0;
 }

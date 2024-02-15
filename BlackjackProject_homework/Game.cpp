@@ -3,12 +3,12 @@
 #include "GameObject.h"
 #include "Map.h"
 #include "SoundManager.h"
-#include "DeckOfCards.h"
 
 //for the player:
 GameObject* player;
 GameObject* dealer;
-DeckOfCards* deckOfCards;//как да изведа всяка карта 
+//как да изведа всяка карта 
+
 //for the field:
 Map* map;
 
@@ -98,7 +98,6 @@ void Game::handleEvents()
 
 void Game::update()
 {
-
 	//with GameObject class:
 	player->updateObj();
 	dealer->updateObj();

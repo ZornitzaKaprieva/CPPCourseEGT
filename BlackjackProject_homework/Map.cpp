@@ -39,7 +39,6 @@ Map::Map()
 	green = TextureManager::loadTexture("map/green.png");
 	black = TextureManager::loadTexture("map/black.png");
 
-
 	loadMap(lvl1);
 
 	src.x = src.y = 0; //always starts from 0

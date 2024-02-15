@@ -16,7 +16,7 @@ private:
 	SDL_Texture* black;
 	SDL_Texture* green;
 
-	//2d interger array:
+	//2d integer array:
 	int map[25][20];
 };
 

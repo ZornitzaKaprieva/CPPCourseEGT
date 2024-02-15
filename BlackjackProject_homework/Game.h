@@ -19,9 +19,9 @@ public:
 
 	void loadAndPlaySound();
 
-	static SDL_Renderer* renderer; // new: вместо да копираме няколко пойнтера за всеки обект;
+	static SDL_Renderer* renderer; // Instead of copying the renderer for each object
 private:
-	bool isRunning = false; //n/o
+	bool isRunning = false;
 	
 	int cnt = 0;
 	SDL_Window* window;
