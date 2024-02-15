@@ -2,6 +2,7 @@
 #include <iostream>
 using std::cout;
 using std::endl;
+using std::cin;
 
 #include "Date.h" // Date class definition
 
@@ -14,11 +15,11 @@ int main()
    cout << "d1 is " << d1 << "\nd2 is " << d2 << "\nd3 is " << d3;
    cout << "\n\nd2 += 7 is " << ( d2 += 7 );
 
-   d3.setDate( 2, 28, 1992 );
+   d3.setDate( 28, 02, 1992 );
    cout << "\n\n  d3 is " << d3;
    cout << "\n++d3 is " << ++d3 << " (leap year allows 29th)";
 
-   Date d4( 7, 13, 2002 );
+   Date d4( 13, 07, 2002 );
 
    cout << "\n\nTesting the prefix increment operator:\n"
       << "  d4 is " << d4 << endl;
@@ -29,6 +30,26 @@ int main()
       << "  d4 is " << d4 << endl;
    cout << "d4++ is " << d4++ << endl;
    cout << "  d4 is " << d4 << endl;
+
+  //new::
+   cout << "\n\nTesting the prefix decrement operator:\n"
+       << "  d4 is " << d4 << endl;
+   cout << "--d4 is " << --d4 << endl;
+   cout << "  d4 is " << d4;
+
+   cout << "\n\nTesting the postfix decrement operator:\n"
+       << "  d4 is " << d4 << endl;
+   cout << "d4-- is " << d4-- << endl;
+   cout << "  d4 is " << d4 << endl;
+
+   cout << "\n\nTesting input operator >> :\n";
+   Date d5;
+   cout << "Enter dd-mm-yy:\n";
+   cin >> d5;
+   cout << d5;
+
+
+
    return 0;
 } // end main
 

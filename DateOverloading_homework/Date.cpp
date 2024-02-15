@@ -7,13 +7,13 @@ const int Date::days[] =
    { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 // Date constructor
-Date::Date( int m, int d, int y ) 
+Date::Date( int d, int m, int y ) //Date::Date( int m, int d, int y ) 
 { 
-   setDate( m, d, y ); 
+   setDate( d, m, y ); 
 } // end Date constructor
 
 // set month, day and year
-void Date::setDate( int mm, int dd, int yy )
+void Date::setDate( int dd, int mm, int yy )
 {
    month = ( mm >= 1 && mm <= 12 ) ? mm : 1;
    year = ( yy >= 1900 && yy <= 2100 ) ? yy : 1900;
@@ -71,6 +71,28 @@ bool Date::endOfMonth( int testDay ) const
       return testDay == days[ month ];
 } // end function endOfMonth
 
+//determine whether the day is the first day of a month
+bool Date::startOfMonth(int day) const
+{
+    return day == 1;
+} // end function endOfMonth
+
+
+//prefix --
+Date& Date::operator--()
+{
+    helpDecrement();
+    return *this;
+}
+
+// postfix --
+Date Date::operator--(int)
+{
+    Date temp = *this;
+    helpDecrement();
+    return temp;
+}
+
 // function to help increment the date
 void Date::helpIncrement()
 {
@@ -91,14 +113,41 @@ void Date::helpIncrement()
       } // end else
 } // end function helpIncrement
 
+void Date::helpDecrement()
+{
+    if (!startOfMonth(this->day)) {
+        this->day--;
+    }
+    else if (this->month == 1) {//if is 01.01.2000 -> 31.12.1999
+        this->month = 12;
+        this->year--;
+        this->day = 31;
+    }
+    else if(this->month == 3 && leapYear(this->year))
+    { // check if is leap year
+     
+            this->day = 29;
+        }
+}
+
+
 // overloaded output operator
 ostream &operator<<( ostream &output, const Date &d )
 {
-   static char *monthName[ 13 ] = { "", "January", "February",
-      "March", "April", "May", "June", "July", "August",
-      "September", "October", "November", "December" };
-   output << monthName[ d.month ] << ' ' << d.day << ", " << d.year;
+   static std::string monthName[ 13 ] = { "", "01", "02",
+      "03", "04", "05", "06", "07", "08",
+      "09", "10", "11", "12" };
+   output << d.day << "-" << monthName[ d.month ] << "-" << d.year;
    return output; // enables cascading
 } // end function operator<<
 
-
+// overloaded input operator
+istream& operator>>(istream & input,  Date & d)
+{
+    int dd, mm, yy;
+    input >> dd;
+    input >> mm;
+    input >> yy;
+    d.setDate(dd, mm, yy);
+    return input; // enables cascading
+} // end function operator>>
