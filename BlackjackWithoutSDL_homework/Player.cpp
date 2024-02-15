@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "DeckOfCards.h"
 
 Player::Player()
 {
@@ -8,8 +9,13 @@ Player::Player()
 
 int Player::randomCard()
 {
-	this->playerCard = 1 + rand() % 13;
-	this->playerHand += this->playerCard;
+	
+	//DeckOfCards* temp = new DeckOfCards;
+	//temp->shuffle();//new
+	
+	//това да се замени ли с deal()?
+	this->playerCard = 1 + rand() % 13; //взима стойността на картата
+	this->playerHand += this->playerCard; //прибавя стойността на картатаа към ръката и връща сбора.
 	return this->playerCard;
 }
 

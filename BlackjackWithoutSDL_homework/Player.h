@@ -3,9 +3,10 @@
 #include<iostream>
 #include<string>
 #include<ctime>
+#include"DeckOfCards.h"
 //#include<limits> //
 
-class Player 
+class Player : public DeckOfCards
 {
 public:
 	Player();

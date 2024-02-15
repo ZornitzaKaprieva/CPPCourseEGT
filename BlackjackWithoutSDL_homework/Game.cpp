@@ -3,20 +3,17 @@
 
 Game::Game()
 {
-	isRunning = true; //n/o
+	isRunning = true;
 	command = ' ';
-	isGameOver = false; //new
-	//isPlayerOver21 = 0;
-	//isDealerOver21 = 0;
+	isLoss = true; //new
 }
 
 void Game::update()
 {
 	//from main
-	srand((unsigned)time(nullptr)); //for random card every time
+	srand((unsigned)time(0)); //for random card every time
 
 	this->playerBJ.setName();
-
 	do {
 		std::cout << "Enter [1] to draw a card. First person that that is closer to 21 wins! Enter [0] for exit\n";
 		std::cin >> this->command;
@@ -41,9 +38,13 @@ void Game::update()
 
 				int pHand = this->playerBJ.getHand();
 				int dHand = this->dealerBJ.getHand();
-				//как да спра цикъла при над 21?
-				this->endGame(pHand, dHand); //to check
-				//this->endGame();
+				
+				//if (this->endGame(pHand, dHand)) //to check 
+				//{
+				//	break;
+				//}
+
+				this->endGame(pHand, dHand);
 			
 			std::cout << "Press [Enter] to continue..." << std::endl;
 			std::cin.clear();
@@ -53,65 +54,45 @@ void Game::update()
 			break;
 		}
 	} while (this->command != '0');
+
 	std::cout << "See you soon!\n";
 }
 
 
-void Game::endGame(int &pHand, int &dHand)
+bool Game::endGame(int &pHand, int &dHand) 
 {
-	if (this->playerBJ.getHand() <= 21 && this->dealerBJ.getHand() < this->playerBJ.getHand())
+	if (this->playerBJ.getHand() > 21)
 	{
-		this->isGameOver = true;
-		std::cout << "You win!\n";
-	}
-	else if (this->dealerBJ.getHand() <= 21 && this->playerBJ.getHand() < this->dealerBJ.getHand())
-	{
-		this->isGameOver = false;
-		std::cout << "You loose!\n";
-	}
-	else
-	{
-		if (this->playerBJ.getHand() > this->dealerBJ.getHand())
+		if (this->playerBJ.getHand() <= 21 && this->dealerBJ.getHand() < this->playerBJ.getHand())
 		{
-			this->isGameOver = true;
-			std::cout << "You win!\n";
+			this->isLoss = true;
+			std::cout << "You won!\n";
 		}
-		else if (this->dealerBJ.getHand()  < this->playerBJ.getHand())
+		else if (this->dealerBJ.getHand() <= 21 && this->playerBJ.getHand() < this->dealerBJ.getHand())
 		{
-			this->isGameOver = false;
-			std::cout << "You loose!\n";
+			this->isLoss = false;
+			std::cout << "You lost!\n";
 		}
+		else
+		{
+			if (this->playerBJ.getHand() > this->dealerBJ.getHand())
+			{
+				this->isLoss = true;
+				std::cout << "You won!\n";
+			}
+			else if (this->dealerBJ.getHand() < this->playerBJ.getHand())
+			{
+				this->isLoss = true;
+				std::cout << "You lost!\n";
+			}
+		}
+		
+		this->isLoss = true;
+		std::cout << "You lost!\n";
 	}
+	
+	return false;
 }
-
-//overloading (to be del)
-void Game::endGame()
-{
-	if (this->playerBJ.getHand() <= 21 && this->dealerBJ.getHand() < this->playerBJ.getHand())
-	{
-		this->isGameOver = true;
-		std::cout << "You win!\n";
-	}
-	else if (this->dealerBJ.getHand() <= 21 && this->playerBJ.getHand() < this->dealerBJ.getHand())
-	{
-		this->isGameOver = false;
-		std::cout << "You loose!\n";
-	}
-	else
-	{
-		if (this->playerBJ.getHand() > this->dealerBJ.getHand())
-		{
-			this->isGameOver = true;
-			std::cout << "You win!\n";
-		}
-		else if (this->dealerBJ.getHand() < this->playerBJ.getHand())
-		{
-			this->isGameOver = false;
-			std::cout << "You loose!\n";
-		}
-	}
-}
-
 
 Game::~Game()
 {

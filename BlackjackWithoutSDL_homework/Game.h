@@ -2,6 +2,11 @@
 #include <iostream>
 #include "Player.h"
 
+
+//как и тестета и карти? 
+//Как да зададем визуализация на картите - една по една ли и през кой х файл? 
+//как да имплементирам логиката в СДЛ?
+
 class Game
 {
 public:
@@ -12,30 +17,25 @@ public:
 	
 	//getters
 	const bool& isRun() { return this->isRunning; } //n/o
-	const bool& isOver() { return this->isGameOver; }
+	const bool& isOver() { return this->isLoss; }
 
 	~Game();
 
 private:
 	bool isRunning; //n/o
 	char command; 
-	bool isGameOver; //new
-	//newTry
-	/*int getPlayerHand;
-	int getDealerHand;*/
-	//void drawCards();
-	//int isPlayerOver21;
-	//int isRobotOver21;
+	bool isLoss; //new
 	
-
 	Player playerBJ;
 	Player dealerBJ;
 
 	//private functions
 	void endGame();
-	void endGame(int& pHand, int& dHand);
+	bool endGame(int& pHand, int& dHand);
 	//bool wantContinue();
-	/*//да го отделя във функция wantContinue()
+	/*//hit and stay  in player / game class
+	
+	да го отделя във функция wantContinue()
 				std::cout << "Enter [any key] to draw a card and [N] to not draw a card.\n";
 				std::cin >> currentCommand;
 				switch (currentCommand)
