@@ -1,4 +1,4 @@
-#include "Game2.h"
+п»ї#include "Game2.h"
 #include <iostream>
 
 Game2::Game2() {
@@ -25,12 +25,12 @@ bool Game2::init(const char* title, int xpos, int ypos, int width, int height, i
 				SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
 
-				// това го взимаме от TextureManager и изтриваме сетовете оттук
+				// loading texture using static TextureManager* Instance()
 				TextureManager::Instance()->loadTexture("assets/happyDog.jpg", "happyDog", renderer); //file, id, render
 				TextureManager::Instance()->loadTexture("assets/porfDog.jpg", "porfDog", renderer);
 				TextureManager::Instance()->loadTexture("assets/Sprite-Sheet.jpg", "Sprite-Sheet", renderer);
 
-				//ADD PICTURE TO WINDOW: del because of TextureManager.:(look for more in SDL_GameClass (gitHub))
+				//ADD PICTURE TO WINDOW: del because of TextureManager (look for more in SDL_GameClass (gitHub))
 			}
 			else {
 				std::cout << "renderer init failed\n";
@@ -101,14 +101,14 @@ void Game2::handleEvents() {
 	}
 }
 
-void Game2::update() 
+void Game2::update()
 {
 	//we can set currentFrame to achieve the animation effect
 	currentFrame = int(((SDL_GetTicks() / 200) % 5)); //if we replace 200 with 100 it will be 2x faster // % 5 - so many frames (in Sprite-Sheet.jpg there are 5 (per line))
 
 	////Different Frames:
-	//std::cout << "SDL_TICKS           :" << SDL_GetTicks() << "\n"; //връща бр. милисец откакто е инициализран фрейма в библиотеката
-	//std::cout << "SDL_TICKS / 100     :" << int(SDL_GetTicks() / 100) << "\n"; //???игнорираме цифрите на 1-ците и десетиците. => това число се променя на 
+	//std::cout << "SDL_TICKS           :" << SDL_GetTicks() << "\n"; //ГўГ°ГєГ№Г  ГЎГ°. Г¬ГЁГ«ГЁГ±ГҐГ¶ Г®ГІГЄГ ГЄГІГ® ГҐ ГЁГ­ГЁГ¶ГЁГ Г«ГЁГ§Г°Г Г­ ГґГ°ГҐГ©Г¬Г  Гў ГЎГЁГЎГ«ГЁГ®ГІГҐГЄГ ГІГ 
+	//std::cout << "SDL_TICKS / 100     :" << int(SDL_GetTicks() / 100) << "\n"; //???ГЁГЈГ­Г®Г°ГЁГ°Г Г¬ГҐ Г¶ГЁГґГ°ГЁГІГҐ Г­Г  1-Г¶ГЁГІГҐ ГЁ Г¤ГҐГ±ГҐГІГЁГ¶ГЁГІГҐ. => ГІГ®ГўГ  Г·ГЁГ±Г«Г® Г±ГҐ ГЇГ°Г®Г¬ГҐГ­Гї Г­Г  
 	//std::cout << "SDL_TICKS / 100 % 10: " << int(((SDL_GetTicks() / 100) % 10)) << "\n\n";
 }
 void Game2::clean() {

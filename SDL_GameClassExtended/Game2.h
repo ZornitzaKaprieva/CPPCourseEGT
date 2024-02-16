@@ -22,7 +22,7 @@ private:
 
 	SDL_Texture* texture = NULL;
 	SDL_Rect sourceRectangle; //the image itself
-	SDL_Rect destinationRectangle; 
+	SDL_Rect destinationRectangle;
 
 	int currentFrame; // for movement through frames
 };

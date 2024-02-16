@@ -6,7 +6,7 @@
 class TextureManager {
 
 public:
-	bool loadTexture(const char* fileName, std::string id, SDL_Renderer* ren); 
+	bool loadTexture(const char* fileName, std::string id, SDL_Renderer* ren);
 	void drawTexture(std::string id,
 		int x, int y,
 		int width, int height,
