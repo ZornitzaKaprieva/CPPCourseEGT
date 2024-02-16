@@ -29,34 +29,32 @@ void DeckOfCards::raffleShuffle()
 	Card leftDeck[26];
 	Card rightDeck[26];
 
-    //разпределяме картите в 2 тестета по 26 карти:
+    //distribute the cards into 2 decks of 26 cards each:
     for (int i = 0; i < 52; i++) {
-        if (i <= 25) {
+        if (i < 26) {
             leftDeck[i].type = deck[i].type;
             leftDeck[i].suit = deck[i].suit;
-            std::cout << "FOR 1: " << leftDeck[i].type << std::endl; //to del
+      
         }
         else  
         { 
-            rightDeck[i].type = deck[i].type;
-            rightDeck[i].suit = deck[i].suit;
-            std::cout << "ELSE 1: " << rightDeck[i].type << std::endl; //to del
+            rightDeck[i - 26].type = deck[i].type;
+            rightDeck[i - 26].suit = deck[i].suit;
+           
         }
     }
 
-    for (int i = 0; i < 52; i++) {
-        std::cout << "INTRO: " << i << std::endl; //to del
-        if (i == 0 || i % 2 == 0) {
-           
-            deck[i].type =  rightDeck[i].type;
-           
-            deck[i].suit = rightDeck[i].suit;
-            std::cout << "FOR 2: " << deck[i].suit << std::endl; //to del
+    for (int i = 0, j = 0; i < 52; i++, j++) {
+        if (i % 2 == 0) {
+            // i=0; deck[0] = rd[0]  ;  i=2; deck[2] = rd[1]   ;  i=4; deck[4] = rd[2]  ;   i=6; deck[6] = rd[3]
+            deck[i].type = rightDeck[i / 2].type;
+            deck[i].suit = rightDeck[i / 2].suit;
         }
-        else 
-        {   
-            deck[i].type = leftDeck[i].type;           
-            deck[i].suit = leftDeck[i].suit;
+        else
+        {
+            // i=1; deck[1] = ld[0]  ;  i=3; deck[3] = ld[1]  ;  i=5; deck[5] = ld[2]  ;  i=7; deck[7] = ld[3]
+            deck[i].type = leftDeck[i / 2].type;
+            deck[i].suit = leftDeck[i / 2].suit;
         }
     }
 
