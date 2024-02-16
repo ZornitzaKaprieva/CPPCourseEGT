@@ -1,4 +1,4 @@
-#include "PictureLoading.h"
+#include "Game.h"
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "Map.h"
@@ -8,17 +8,17 @@ GameObject* bbalPlayer;
 //for the field:
 Map* map;
 
-SDL_Renderer* PictureLoading::renderer = nullptr; //new 6 дефинираме го и го инициализираме с нул, защото не сме инициализрали стл още
+SDL_Renderer* Game::renderer = nullptr; //new 6 дефинираме го и го инициализираме с нул, защото не сме инициализрали стл още
 
 
-PictureLoading::PictureLoading()
+Game::Game()
 {
-	PictureLoading::window = NULL;
-	PictureLoading::renderer = NULL;
+	Game::window = NULL;
+	Game::renderer = NULL;
 }
 
 //initialize subsystems:
-void PictureLoading::init(const char* title, int width, int height, bool fullscreen)
+void Game::init(const char* title, int width, int height, bool fullscreen)
 {
 	int flags = 0;
 
@@ -57,7 +57,7 @@ void PictureLoading::init(const char* title, int width, int height, bool fullscr
 	std::cout << "Object/s created.\n";
 }
 
-void PictureLoading::handleEvents()
+void Game::handleEvents()
 {
 	SDL_Event event;
 
@@ -73,14 +73,14 @@ void PictureLoading::handleEvents()
 	}
 }
 
-void PictureLoading::update()
+void Game::update()
 {
 	//with GameObject class:
 	bbalPlayer->updateObj();
 	std::cout << "Update object.\n";
 }
 
-void PictureLoading::render()
+void Game::render()
 {
 	SDL_RenderClear(renderer);
 
@@ -93,7 +93,7 @@ void PictureLoading::render()
 	SDL_RenderPresent(renderer);
 }
 
-void PictureLoading::clean()
+void Game::clean()
 {
 
 	SDL_DestroyWindow(window);
@@ -102,7 +102,7 @@ void PictureLoading::clean()
 	std::cout << "Clean\n";
 }
 
-PictureLoading::~PictureLoading()
+Game::~Game()
 {
 	std::cout << "Destructor\n";
 }

@@ -1,4 +1,4 @@
-#include "PictureLoading.h"
+#include "Game.h"
 
 //own movement for any object
 class GameObject
@@ -11,10 +11,10 @@ public:
 	void renderObj(); //specific behavior
 
 private:
-	int xpos; //къде искаме да поставим обекта на екрана
+	int xpos; //to place the object on the screen
 	int ypos;
 	SDL_Texture* objTexture;
-	SDL_Rect srcRect, destRect; //за дисплейване 
+	SDL_Rect srcRect, destRect; //display
 	SDL_Renderer* renderer; //
 };
 

@@ -4,11 +4,11 @@
 #include <SDL_image.h> 
 #include <iostream>
 
-class PictureLoading
+class Game
 {
 public:
-	PictureLoading();
-	~PictureLoading();
+	Game();
+	~Game();
 	void init(const char* title, int width, int height, bool fullscreen);
 	void handleEvents();
 	void update(); //to make all game objects updateable 

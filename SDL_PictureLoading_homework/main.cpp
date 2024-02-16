@@ -1,6 +1,6 @@
-#include "PictureLoading.h"
+#include "Game.h"
 
-PictureLoading* game = nullptr;
+Game* game = nullptr;
 
 int main(int argc, char* argv[])
 {
@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 	Uint32 frameStart; //how long be running the game 
 	int frameTime;
 
-	game = new PictureLoading();
+	game = new Game();
 	game->init("GameWindow", 640, 800, false);
 
 	while (game->running())
@@ -28,6 +28,6 @@ int main(int argc, char* argv[])
 	}
 
 	game->clean();
-	game->~PictureLoading();
+	game->~Game();
 	return 0;
 }

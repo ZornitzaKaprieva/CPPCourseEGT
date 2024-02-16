@@ -1,6 +1,6 @@
 #pragma once
 
-#include "PictureLoading.h"
+#include "Game.h"
 
 
 class Map

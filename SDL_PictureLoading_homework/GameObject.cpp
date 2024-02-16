@@ -13,7 +13,7 @@ void GameObject::updateObj()
 {
 	//for movement:
 	xpos++;
-	ypos++;
+	//ypos++;
 
 	srcRect.h = 32; //32
 	srcRect.w = 32; //32
@@ -28,7 +28,7 @@ void GameObject::updateObj()
 
 void GameObject::renderObj()
 {
-	SDL_RenderCopy(PictureLoading::renderer, objTexture, &srcRect, &destRect);
+	SDL_RenderCopy(Game::renderer, objTexture, &srcRect, &destRect);
 }
 
 GameObject::~GameObject()
