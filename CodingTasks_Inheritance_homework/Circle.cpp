@@ -9,3 +9,4 @@ void Circle::draw() // display info for circle
 {
 	std::cout << "Drawing a " << this->color << " circle" << std::endl;
 }
+

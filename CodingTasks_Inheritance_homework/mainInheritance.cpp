@@ -5,11 +5,10 @@
 
 int main()
 {
+    Shape* c = new Circle("red"); //creating circle object
+    Shape* r = new Rectangle("green"); //creating rectangle object
 
-    Shape* c = new Circle("red");
-    Shape* r = new Rectangle("green");
-
-    c->draw();
+    c->draw(); // call method draw 
     r->draw();  
 }
 
