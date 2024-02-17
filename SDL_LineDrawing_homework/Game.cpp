@@ -52,7 +52,7 @@ void Game::render() { //clear buffer
 
 	//draw a line with coordinates of where to start and where to go
 	SDL_RenderDrawLine(renderer, 0, wh / 2, ww, wh / 2);
-	SDL_RenderDrawLine(renderer, 400, wh / ww, ww/2, wh ); //
+	SDL_RenderDrawLine(renderer, ww / 2, 0, ww / 2, wh);
 
 	SDL_RenderPresent(renderer);
 }
