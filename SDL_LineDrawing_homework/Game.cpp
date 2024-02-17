@@ -47,8 +47,8 @@ void Game::render() { //clear buffer
 	//draw a shape
 	int ww, wh;
 	SDL_GetWindowSize(window, &ww, &wh); //what is the size of this window
-	SDL_Rect fillRect = { ww / 4, wh / 4, ww / 2, wh / 2 }; 
-	SDL_SetRenderDrawColor(renderer, 0xFF, 0x00, 0x00, 0xFF);
+
+	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 
 	//draw a line with coordinates of where to start and where to go
 	SDL_RenderDrawLine(renderer, 0, wh / 2, ww, wh / 2);
