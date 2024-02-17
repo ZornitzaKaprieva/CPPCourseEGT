@@ -72,7 +72,9 @@ void Game::handleEvents()
 		std::cout << "QUIT event\n";
 		isRunning = false;
 		break;
-	case SDL_KEYDOWN: { 
+	case SDL_KEYDOWN: 
+	{ 
+		//music:
 		if (event.key.keysym.sym == SDLK_1) { // press 1 to increase volume //не работи
 			SoundManager::Instance()->changeVolume(1);
 			std::cout << "Increase volume\n";
@@ -88,35 +90,59 @@ void Game::handleEvents()
 			std::cout << "Music paused.\n";
 		}
 
+		//player2:
 		if (event.key.keysym.sym == SDLK_UP) // move the player up
 		{ 
 			bbalPlayer1->moveUP();
-			//bbalPlayer2->moveUP();
-			std::cout << "Player UP.\n";
+			std::cout << "Player1 UP.\n";
 		}
 
 		if (event.key.keysym.sym == SDLK_DOWN)  // move the player down
 		{
 			bbalPlayer1->moveDown();
-			//bbalPlayer2->moveDown();
-
-			std::cout << "Player DOWN.\n";
+			std::cout << "Player1 DOWN.\n";
 		}
 
 		if (event.key.keysym.sym == SDLK_LEFT) // move the player left
 		{
 			bbalPlayer1->moveLeft();
-			//bbalPlayer2->moveLeft();
-			std::cout << "Player LEFT.\n";
+			std::cout << "Player1 LEFT.\n";
 		}
 
 		if (event.key.keysym.sym == SDLK_RIGHT) // move the player right
 		{
 			bbalPlayer1->moveRight();
-			//bbalPlayer2->moveRight();
-			std::cout << "Player RIGHT.\n";
+			std::cout << "Player1 RIGHT.\n";
 		}
-		break;	
+		//break;	
+		
+		//player2:
+		if (event.key.keysym.sym == SDLK_KP_8) // move the player up
+		{
+			bbalPlayer2->moveUP();
+			std::cout << "Player2 UP.\n";
+		}
+
+		if (event.key.keysym.sym == SDLK_KP_2)  // move the player down
+		{
+			bbalPlayer2->moveDown();
+
+			std::cout << "Player2 DOWN.\n";
+		}
+
+		if (event.key.keysym.sym == SDLK_KP_4) // move the player left
+		{
+			bbalPlayer2->moveLeft();
+			std::cout << "Player2 LEFT.\n";
+		}
+
+		if (event.key.keysym.sym == SDLK_KP_6) // move the player right
+		{
+			
+			bbalPlayer2->moveRight();
+			std::cout << "Player2 RIGHT.\n";
+		}
+		break;
 	}
 	default:
 		break;
