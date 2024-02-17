@@ -1,16 +1,16 @@
-﻿#include "Game2.h"
+﻿#include "Game.h"
 #include <iostream>
 
-Game2::Game2() {
-	Game2::window = NULL;
-	Game2::renderer = NULL;
-	Game2::running = true;
-	Game2::sourceRectangle.x = Game2::sourceRectangle.y = Game2::sourceRectangle.w = Game2::sourceRectangle.h = 0;
-	Game2::destinationRectangle.x = Game2::destinationRectangle.y = Game2::destinationRectangle.w = Game2::destinationRectangle.h = 0;
-	Game2::currentFrame = NULL; //4 for 5th frame etc
+Game::Game() {
+	Game::window = NULL;
+	Game::renderer = NULL;
+	Game::running = true;
+	Game::sourceRectangle.x = Game::sourceRectangle.y = Game::sourceRectangle.w = Game::sourceRectangle.h = 0;
+	Game::destinationRectangle.x = Game::destinationRectangle.y = Game::destinationRectangle.w = Game::destinationRectangle.h = 0;
+	Game::currentFrame = NULL; //4 for 5th frame etc
 }
 
-bool Game2::init(const char* title, int xpos, int ypos, int width, int height, int flags) {
+bool Game::init(const char* title, int xpos, int ypos, int width, int height, int flags) {
 	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) { // if == 0 - succsessfuly initilized the SDL subsystem
 		std::cout << "SDL init success\n";
 
@@ -51,13 +51,12 @@ bool Game2::init(const char* title, int xpos, int ypos, int width, int height, i
 	return true;
 }
 
-void Game2::render() { //clear buffer
+void Game::render() { //clear buffer
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // set window color
 	SDL_RenderClear(renderer);
 	//SDL_RenderCopy(renderer, texture, &sourceRectangle, &destinationRectangle); //to crop
 	//from TextureManager:
 	TextureManager::Instance()->drawOneFrameFromTexture("Sprite-Sheet", 0, 0, 130, 130, 2, currentFrame, renderer);// keyword, coordinate, coordinate, size, size, rows we want to use(1, 2 etc), currentframe, render
-	//TextureManager::Instance()->drawOneFrameFromTexture("Sprite-Sheet", 0, 150, 130, 130, 1, currentFrame, renderer, SDL_FLIP_HORIZONTAL);
 	//TextureManager::Instance()->drawTexture("happyDog", 0, 0, 200, 133, renderer); //keyword, coordinate, coordinate, size, size, renderer
 	TextureManager::Instance()->drawTexture("happyDog", 620, 460, 200, 133, renderer, SDL_FLIP_HORIZONTAL);
 	//TextureManager::Instance()->drawTexture("porfDog", 0, 250, 200, 133, renderer);
@@ -66,6 +65,8 @@ void Game2::render() { //clear buffer
 	//draw shape
 	int ww, wh;
 	SDL_GetWindowSize(window, &ww, &wh); //what is the size of this window
+
+	// rectangle (filled)
 	SDL_Rect fillRect = { ww / 4, wh / 4, ww / 2, wh / 2 }; //SDL_Rect contains x, y, w, h
 	SDL_SetRenderDrawColor(renderer, 0xFF, 0x00, 0x00, 0xFF);
 	SDL_RenderFillRect(renderer, &fillRect);
@@ -91,7 +92,7 @@ void Game2::render() { //clear buffer
 	SDL_RenderPresent(renderer);
 }
 
-void Game2::handleEvents() {
+void Game::handleEvents() {
 	SDL_Event event;
 	if (SDL_PollEvent(&event)) {
 		switch (event.type) {
@@ -101,7 +102,7 @@ void Game2::handleEvents() {
 	}
 }
 
-void Game2::update()
+void Game::update()
 {
 	//we can set currentFrame to achieve the animation effect
 	currentFrame = int(((SDL_GetTicks() / 200) % 5)); //if we replace 200 with 100 it will be 2x faster // % 5 - so many frames (in Sprite-Sheet.jpg there are 5 (per line))
@@ -111,16 +112,16 @@ void Game2::update()
 	//std::cout << "SDL_TICKS / 100     :" << int(SDL_GetTicks() / 100) << "\n"; //???èãíîðèðàìå öèôðèòå íà 1-öèòå è äåñåòèöèòå. => òîâà ÷èñëî ñå ïðîìåíÿ íà 
 	//std::cout << "SDL_TICKS / 100 % 10: " << int(((SDL_GetTicks() / 100) % 10)) << "\n\n";
 }
-void Game2::clean() {
+void Game::clean() {
 	std::cout << "cleaning game\n";
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
 }
 
-bool Game2::isRunning() {
-	return Game2::running;
+bool Game::isRunning() {
+	return Game::running;
 }
 
-Game2::~Game2() {
+Game::~Game() {
 }

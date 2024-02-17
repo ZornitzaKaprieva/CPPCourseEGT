@@ -4,10 +4,10 @@
 #include "TextureManager.h"
 #include "Shapes.h"
 
-class Game2 {
+class Game {
 public:
-	Game2();
-	~Game2();
+	Game();
+	~Game();
 	bool init(const char* title, int xpos, int ypos, int width, int height, int flags);
 	void handleEvents();
 	void update(); //to make all game objects updateable 

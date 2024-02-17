@@ -1,5 +1,5 @@
 #pragma once
-#include "Game2.h"
+#include "Game.h"
 #include <string>
 #include <map>
 
