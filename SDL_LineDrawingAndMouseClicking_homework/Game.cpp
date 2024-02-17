@@ -57,10 +57,9 @@ void Game::render() { //clear buffer
 	SDL_GetWindowSize(window, &ww, &wh); //what is the size of this window
 	
 	//from TextureManager:
-	
 	TextureManager::Instance()->drawTexture("happyDog1", 0, wh/2 - 133, 200, 133, renderer); //keyword, coordinate, coordinate, size, size, renderer
-	TextureManager::Instance()->drawTexture("happyDog2", ww - 200, wh / 2 - 200, 200, 200, renderer);
-	TextureManager::Instance()->drawTexture("happyDog3", 0, wh - 133, 200, 133, renderer);
+	TextureManager::Instance()->drawTexture("happyDog2", ww - 200, wh / 2 - 152, 200, 152, renderer);
+	TextureManager::Instance()->drawTexture("happyDog3", 0, wh - 135, 200, 133, renderer);
 	TextureManager::Instance()->drawTexture("happyDog4", ww - 250, wh - 168, 250, 166, renderer, SDL_FLIP_HORIZONTAL);
 	
 	//draw a shape
@@ -77,7 +76,7 @@ void Game::handleEvents() {
 	if (SDL_PollEvent(&event)) {
 		switch (event.type) {
 		case SDL_QUIT: running = false; break; //by clicking x on the window
-		case SDL_MOUSEBUTTONDOWN:
+		case SDL_MOUSEBUTTONDOWN: //by clicking with the mouse
 			int mx, my;
 			int w, h;
 			SDL_GetWindowSize(window, &w, &h);
@@ -87,22 +86,21 @@ void Game::handleEvents() {
 			std::cout << "Coordinates: " << mx << " / " << my << std::endl;
 
 			//to define the coordinates on which, when clicked, the particular image is displayed:
-			if (mx < w / 2 && my < h / 2) {
-				
+			if (mx < w / 2 && my < h / 2) 
+			{
 				TextureManager::Instance()->switchVisibility("happyDog1");
-
 			}
-			else if (mx > w / 2 && mx <= w && my < h / 2) {
+			else if (mx > w / 2 && mx <= w && my < h / 2) 
+			{
 
-				
 				TextureManager::Instance()->switchVisibility("happyDog2");
 			}
-			else if (mx < w / 2 && my > h / 2 && my <= h) {
-
+			else if (mx < w / 2 && my > h / 2 && my <= h) 
+			{
 				TextureManager::Instance()->switchVisibility("happyDog3");
 			}
-			else if (mx > w / 2 && mx <= w && my > h / 2 && my <= h) {
-
+			else if (mx > w / 2 && mx <= w && my > h / 2 && my <= h) 
+			{
 				TextureManager::Instance()->switchVisibility("happyDog4");
 			}
 		default: break;

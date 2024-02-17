@@ -1,6 +1,6 @@
 #include "TextureManager.h"
 
-TextureManager* TextureManager::instance = 0;
+TextureManager* TextureManager::instance = 0; //because of static TextureManager* Instance()
 
 bool TextureManager::loadTexture(const char* fileName, std::string id, SDL_Renderer* ren) {
 	SDL_Surface* tempSurface = IMG_Load(fileName);
@@ -8,8 +8,8 @@ bool TextureManager::loadTexture(const char* fileName, std::string id, SDL_Rende
 		return false;  // if something went wrong
 	SDL_Texture* tex = SDL_CreateTextureFromSurface(ren, tempSurface);
 	SDL_FreeSurface(tempSurface);
-	if (tex != 0) {
-		textureMap[id] = tex;
+	if (tex != 0) {  
+		textureMap[id] = tex; //std::map<std::string, SDL_Texture*> textureMap;
 		return true;
 	}
 	return false; // if something went wrong
@@ -21,7 +21,8 @@ void TextureManager::drawTexture(std::string id,
 	SDL_Renderer* ren,
 	SDL_RendererFlip flip) 
 {
-	if (visibility[id] == true) {
+	if (visibility[id] == true)  // for more: bool TextureManager::switchVisibility(std::string id)
+	{
 		SDL_Rect srcRect;
 		SDL_Rect destRect;
 		srcRect.x = srcRect.y = 0;
@@ -40,9 +41,6 @@ bool TextureManager::switchVisibility(std::string id)
 
 		visibility[id] = false;
 	}
-	
 
 	return visibility[id] = true;
 }
-
-//
