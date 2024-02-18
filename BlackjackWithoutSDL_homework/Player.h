@@ -11,14 +11,14 @@ public:
 	Player();
 	~Player();
 
-	//functions:
+	//method:
 	int randomCard();//<ctime> 
 
-	//getters new
+	//getters:
 	const std::string getName() const { return this->playerName; } 
 	int getHand() const;
 
-	//newTry
+	//new:
 	int finalScore(int getHand); //todo
 
 	//setter for name 

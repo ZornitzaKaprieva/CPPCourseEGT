@@ -10,9 +10,10 @@
 class Game
 {
 public:
+	//constructor:
 	Game();
 	
-	//functions:
+	//method:
 	void update();
 	
 	//getters
@@ -30,7 +31,7 @@ private:
 	Player playerBJ;
 	Player dealerBJ;
 
-	//private functions
+	//private methods
 	void endGame();
 	bool endGame(int& pHand, int& dHand);
 

@@ -27,17 +27,17 @@ DeckOfCards::DeckOfCards()
     { "Hearts", "Diamonds", "Clubs", "Spades" };
 
     // initialize face array
-    static std::string face[13] =
+    static std::string type[13] =
     { "Ace", "Deuce", "Three", "Four", "Five", "Six", "Seven",
     "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
 
     // set values for deck of 52 Cards
     for (int i = 0; i < 52; i++)
     {
-        deck[i].face = face[i % 13];
+        deck[i].type = type[i % 13];
         deck[i].suit = suit[i / 13];
 
-        //wskqka karta kakyw score nosi
+        //+ всяка карта какъв score носи
         //get method for the card
     } // end for
 
