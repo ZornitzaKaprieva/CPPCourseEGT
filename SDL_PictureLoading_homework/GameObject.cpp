@@ -11,9 +11,23 @@ GameObject::GameObject(const char* textureSheet, int x, int y)
 
 void GameObject::updateObj()
 {
+	//SDL_GetWindowSize() //640, 800
+
 	//for movement:
-	xpos++;
+	//xpos++;
 	//ypos++;
+
+	if (xpos <= 550)
+	{
+		xpos++;
+		std::cout << "xpos++: " << xpos << std::endl;
+
+	}
+	else //if (xpos > 60)
+	{
+		xpos--;
+		std::cout << "xpos--: " << xpos << std::endl;
+	}
 
 	srcRect.h = 32; //32
 	srcRect.w = 32; //32
@@ -24,6 +38,7 @@ void GameObject::updateObj()
 	destRect.y = ypos;
 	destRect.w = srcRect.w * 2;// / 2;
 	destRect.h = srcRect.h * 2;// / 2;
+
 }
 
 void GameObject::renderObj()
